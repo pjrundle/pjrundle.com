@@ -1,0 +1,7 @@
+node_modules
+dist
+*.tsbuildinfo
+.vercel
+.pnpm-store
+.env.local
+.DS_Store
