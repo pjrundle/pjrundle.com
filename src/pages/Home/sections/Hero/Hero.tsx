@@ -20,17 +20,26 @@ export const Hero = () => {
               />
             </div>
 
-            <div className="flex align-items:end justify-content:center@lg">
+            <div className="flex align-items:end">
               <div className="pr:2x pr:14x@sm pl:6x@lg rel">
                 <span className="hidden block@lg abs top:4px bottom:4px left:-2px w:3px bg:color-gray-700"></span>
                 <TextModule
                   variant="block.hero"
                   classNameCopy="max-w:65ch@lg text-wrap:pretty@lg"
-                  copy="Specializing in design systems, component architecture,
-                      and scalable front-end platforms — working at the
-                      intersection of design and engineering with a focus on
-                      consistency and repeatable, high-quality execution."
+                  copy={
+                    <>
+                      <p>
+                        Specializing in design systems, component architecture,
+                        and scalable front-end platforms — working at the
+                        intersection of design and engineering with a focus on
+                        consistency and repeatable, high-quality execution.
+                      </p>
+                    </>
+                  }
                 />
+                <p className="typestyle-meta leading:1.4 f:10 mt:5x">
+                  Available for: senior roles, contract, advisory
+                </p>
               </div>
             </div>
           </div>

@@ -694,7 +694,7 @@ export const tokenSet = {
               md: 1.15,
               lg: 1.15,
               xl: 1.15,
-              "2xl": 1.1,
+              "2xl": 1.15,
               "3xl": 1.1,
               "4xl": 1.1,
               "5xl": 1.1,
@@ -954,7 +954,7 @@ export const tokenSet = {
               },
               heading: {
                 fontSize:
-                  "f:display-md f:32@<sm f:display-lg@sm f:display-xl@lg f:display-2xl@xl f:46@xl",
+                  "f:display-md f:32@<sm f:display-lg@sm f:display-xl@lg",
                 spaceAfter: "pb:4.5x",
               },
               copy: {

@@ -39,7 +39,9 @@ export const Footer = () => {
         <div className="page-container-lg px:5x px:10x@md pt:6.5x pb:7.5x pt:8x@sm pb:9.5x@sm pt:12x@md pb:14x@md b:border-b bb:none flex justify-content:start">
           <TextModule
             variant="block.base"
-            heading={<span className="f:40@xl">hello@pjrundle.com</span>}
+            heading={
+              <span className="f:display-lg@xl">hello@pjrundle.com</span>
+            }
           />
         </div>
         <div className="page-container-lg bg:color-gray-50 z:100 b:border-b bb:none">
