@@ -1,0 +1,190 @@
+> **ThemeOS is a design system runtime composed of modular packages. It provides a schema-validated token model (design system) which can be consumed across multiple applications. Design config is treated as portable runtime state — allowing updates to propagate without rebuilds. It’s designed to be used as a Single Source of Truth (SSOT) for your design system — define it once and share it across products and codebases.**
+
+This site is styled with ThemeOS.
+
+---
+
+## 1. Context
+
+ThemeOS did not begin as a standalone project. Its roots go back to my time building systems at <Link href="/projects/brandwatch">Brandwatch,</Link> where strict brand enforcement was required across multiple websites and digital surfaces. The system I built there is still in use today.
+
+Later, when building <Link href="/projects/wombat">Wombat,</Link> that core idea evolved. Wombat required a flexible but controlled theming system — one that could power both user‑produced web content and Wombat's own UI. Over time, that theming architecture became increasingly capable, opinionated, and reusable.
+
+ThemeOS is the result of extracting that architecture into a standalone, boundary-agnostic design‑system runtime.
+
+---
+
+## 2. Constraints
+
+ThemeOS was shaped by real constraints rather than idealized design‑system theory:
+
+- Bootstrapped product — limited engineering resources
+- Need for live theme editing via GUI
+- Styling both product UI and user‑generated web output
+- Preventing design drift across surfaces
+- Supporting multiple styling systems in the same DOM
+- Should aid rapid prototyping/development
+- High performance requirements (runtime resolution, minimal overhead)
+
+These constraints forced architectural clarity. The system needed to be expressive, transportable, and safe — without becoming heavy or over‑abstracted.
+
+---
+
+## 3. Architecture & Implementation
+
+ThemeOS is built around a few core architectural decisions, with runtime behavior as a first‑class concern.
+
+<ArticleAssetContainer>
+  <div className="typestyle-copy f:0.7em mb:1em">High-Level Architecture</div>
+  <ArchitectureDiagram />
+</ArticleAssetContainer>
+
+### Structured Token Schema
+
+```ts
+const { errors, summary } = validateThemeOsTokenSet(designTokens);
+```
+
+A strongly typed token schema defines:
+
+- Base color ramps (light/dark variants, stepped scales)
+- UI palette roles (accent, neutral, success, warning, error)
+- Component structural tokens (radius, typography, spacing)
+- Surface and intent resolution rules
+
+Schemas are validated to ensure invariants and forward compatibility. Design state is treated as structured data, not loose configuration.
+
+### Runtime‑First Design
+
+ThemeOS is not a build‑time styling solution. It is a runtime system.
+
+Under the hood it uses Master Css and dynamic css custom properties to facilitate this.
+
+Theme configuration can be:
+
+- Stored in a database
+- Version controlled and deployed independently
+- Delivered to consuming applications without requiring a rebuild
+- Swapped or edited dynamically
+
+Because tokens are resolved at runtime, applications consume a design system as data. This enables real‑time updates across multiple apps from a single source of truth.
+
+### Palette‑Driven UI Model
+
+Components do not choose arbitrary colors.
+
+Instead:
+
+- Palettes define color sources
+- Components control behavioral shade rules (e.g. 500 → 600 → 700 for hover/focus)
+- Skins override palette sources, not behavior
+
+This keeps the schema small while preserving expressive power.
+
+### Resolver Pattern
+
+A central resolver maps “raw” tokens to ”resolved” tokens.
+
+Components can inspect and consume both raw and resolved tokens.
+
+This allows the author of a token set to reuse tokens like so:
+
+```json
+  vars: { radius: { default: 4 }},
+  // later
+  surface: { card: { radius: "$vars.radius.default" }},
+```
+
+### Multi‑System DOM Support
+
+One of the original requirements was running multiple styling systems side‑by‑side in the same DOM environment.
+
+ThemeOS supports this by:
+
+- Namespaced resolution
+- Context‑driven theme boundaries
+- Explicit separation of UI styling and content styling
+
+This was critical for Wombat, where both the product UI and user‑generated sites required independent theming.
+
+```ts
+export const tokens = {
+  "schemaVersion": "1.0.0",
+  "prefix": 'app', // namespaced when provided
+  "id": "wmbt-app-theme",
+  "defaultColorMode": "light",
+  ...
+}
+```
+
+### What This Unlocks
+
+Because the design system is runtime state rather than static code, ThemeOS enables workflows that are difficult or impossible with traditional token exports:
+
+- A theme/design system stored centrally and shared across products
+- Real‑time propagation of updates without redeploying applications
+- Optional version‑controlled push‑to‑deploy flows for controlled environments
+- The ability to expose a theme editor panel inside local development or staging
+- Designers experimenting directly within the real product, not a mock or parallel playground
+
+This shifts the design system from being a static library to being collaborative, controlled infrastructure.
+
+---
+
+## 4. Detaching from Wombat
+
+Up until recently, this architecture was simply "the Wombat theming system."
+
+It had significant thought behind it, and I found the developer experience and architectural clarity compelling. When starting a new project (Milemap), I faced the same question every engineer does at the beginning of something new:
+
+"What should I use for this?"
+
+I wanted to use the Wombat theming system again. It solved the same class of problems — portable theming, runtime resolution, consistent UI rules — and had already proven effective.
+
+At that point, I decided to extract it properly:
+
+- Give it a name
+- Define clear package boundaries
+- Separate primitives from styled components
+- Formalize its schema
+- Package it as a reusable system
+
+ThemeOS is now used in:
+
+- Wombat
+- Milemap
+- This portfolio site
+
+Extracting it clarified the architecture further. What had been an internal subsystem became an explicit runtime for design systems.
+
+---
+
+## 5. Core Insight
+
+The central insight behind ThemeOS is that design systems become significantly more useful when treated as data and runtime state rather than static exports.
+
+When brand configuration is structured state, it can cross boundaries that are traditionally difficult — between codebases, environments, and over the wire — and remain consistent everywhere it’s consumed.
+
+Tokens encode sources and semantics.
+Code encodes interaction rules.
+
+This separation allows systems to stay flexible without collapsing into combinatorial complexity.
+
+There are parallels with realtime data platforms like Convex and Firebase: the model works by ignoring traditional boundaries and treating state as portable, synchronizable infrastructure. The result is both simpler and more powerful.
+
+ThemeOS is an attempt to make a true design-system SSOT operational, not aspirational.
+
+---
+
+## 6. What’s Next
+
+ThemeOS is already in active use, but the next phase is about pressure-testing and refinement.
+
+Near-term focus:
+
+- Stress-testing across Wombat and Milemap, iterating from real usage
+- Revisiting a tokens → Figma export path
+- Introducing a “static mode” for performance-sensitive environments
+- Enhancing schema typing, validation, and editor hinting
+
+See more at <PAccessibleLink href="https://theme-os.vercel.app/" newTab={true}>theme-os.com</PAccessibleLink>

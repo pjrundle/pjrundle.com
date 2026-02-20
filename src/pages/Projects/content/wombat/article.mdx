@@ -1,0 +1,243 @@
+> **Wombat is a design-system-powered CMS for creating and evolving marketing websites – with the same system also supporting outputs like decks and other brand surfaces. It combines structured content, reusable components, and shared theming to enable fast production without sacrificing consistency or maintainability.**
+
+---
+
+## 1. Context
+
+Wombat was heavily influenced by my time building systems at Brandwatch.
+
+At Brandwatch, the web platform operated across 5–10 active websites at any time, each containing thousands of pieces of content produced by marketers, legal teams, and product teams – all of which had to adhere to strict brand guidelines.
+
+This was enabled by and underlying design system and component library, paired with multiple specialized "builder" systems tailored to produce different content types:
+
+- Product pages
+- Industry pages
+- Use case pages
+- Case Studies, Reports and Guides
+- Webinars
+- Emails
+- Legal documents / hubs
+- Event microsites
+- Etc...
+
+“Flagship pages” — homepages, major product launches, one‑off campaigns, and internal apps — were normally custom built.
+
+Design direction was led by the design team (CDO, art director, web designers - including myself). Marketers and internal teams used the structured builder systems to produce high‑volume, on‑brand content at speed.
+
+After leaving Brandwatch, Wombat was designed as a natural evolution of this core idea — incorporating those learnings, but built from the ground up using modern tooling and with full architectural control.
+
+Wombat can be thought of as a design‑system‑powered content creation tool.
+
+---
+
+## 2. Constraints
+
+Wombat was built under real startup constraints:
+
+- Bootstrapped product
+- Small team
+- No dedicated design systems team
+- Need for both rapid iteration and long‑term architectural clarity
+- Sites built by non‑technical users, but extensible by developers
+- Live editing requirements inside the browser
+- Requirement to style both Wombat's product UI and user‑generated sites
+
+These constraints shaped nearly every architectural decision.
+
+---
+
+## 3. Architecture & Implementation
+
+Wombat's architecture evolved around a few core principles.
+
+### Block‑Based System
+
+Instead of freeform page construction, Wombat uses structured blocks.
+
+- Pre‑built layout blocks for common use cases
+- Developer‑defined custom blocks when needed
+- Schema‑validated block data
+- Clear separation between structure and content
+
+This approach keeps pages predictable while still allowing flexibility where necessary.
+
+To avoid drift and maintenance overhead, block authors are not required to create separate thumbnail representations for pickers. Instead, a lightweight preview component renders and scales the real block to a fixed aspect ratio, ensuring thumbnails are always accurate and stylistically consistent.
+
+### Schema‑Validated Blocks
+
+Each block is validated against a defined schema.
+
+- Ensures forward compatibility
+- Prevents runtime crashes
+- Allows safe evolution of block APIs
+- Surfaces validation errors directly in the UI
+
+Blocks are wrapped in error boundaries to avoid full‑page failure, prioritizing graceful degradation.
+
+### Design System Integration
+
+Wombat required a theming system capable of:
+
+- Powering user‑generated website output
+- Powering Wombat's own UI
+- Supporting runtime theme editing
+- Avoiding drift between surfaces
+
+This requirement led to the development of what later became ThemeOS.
+
+Two styling systems often needed to coexist in the same DOM environment — product UI and rendered site output — requiring explicit boundaries and namespacing.
+
+### Editor‑First Components
+
+What does editing a website look like in 2026?
+
+For many structured/editorial CMS platforms, editing still means form‑based control panels disconnected from the rendered page. While functional, this does create cognitive distance between configuration and output.
+
+As such, we chose inline editing as the primary interaction model.
+
+- Content is edited directly within the rendered page
+- Controls appear contextually
+- The page itself is the interface
+- If you want to move something – you drag it
+
+This significantly increased implementation complexity compared to traditional form‑based editing, but produced a more intuitive experience for non‑technical users.
+
+A second architectural principle followed from this decision.
+
+When building a block or template, there should not be two parallel implementations — one for "editor" and one for "output."
+
+In Wombat:
+
+- Blocks are authored once
+- The system layers editability automatically
+- There is no separate editor template to maintain
+
+This ensures that what developers build is exactly what users see and edit.
+
+Editor logic is additive and declarative rather than duplicative. Draft state is separated from persisted state, and components assume editability by default unless explicitly marked static.
+
+This approach prioritized:
+
+- Architectural clarity
+- Reduced maintenance overhead
+- Zero drift between editing and published output
+- A tighter feedback loop for users
+
+These were structural decisions that shaped the entire product architecture.
+
+### Editor Iframe Architecture
+
+Wombat's editor experience runs the rendered site inside an isolated iframe.
+
+This enables:
+
+- True device previews via dynamic resizing
+- Rendering the exact same templates for editing and production
+- Clear separation between the editor application and the site output
+
+The iframe always renders the real templates — not a simulation. This ensures consistency between preview and published output.
+
+However, this introduces architectural complexity.
+
+Inline editors render inside the iframe (alongside the content they modify), but must communicate with the parent application for:
+
+- State management
+- Sidebar controls
+- Persistence
+- Theme updates
+
+This requires structured cross-frame communication between the editor shell (the app) and the rendered document (the iframe).
+
+While iframe-based builders are common in content platforms, Wombat's approach adds additional layers:
+
+- Floating UI controls anchored to inline elements
+- Runtime theming that must resolve consistently across boundaries
+- Editor-first components that assume live editability
+
+The result is an architecture where:
+
+- The rendered page is always "real"
+- The editor shell orchestrates state and persistence
+- Communication between layers is explicit and controlled
+
+This separation increases complexity, but provides stronger guarantees around preview accuracy, theming consistency, and long-term maintainability.
+
+### Custom Blocks & Extensibility
+
+Wombat allows developers to build custom blocks using the exact same primitives and patterns used internally.
+
+Core editable components — such as `<TextModule />` (an editable, responsive typography unit), `<Image />`, and other system components — are exposed for reuse. Custom blocks are authored in the same way first-party blocks are built, ensuring consistency across the ecosystem.
+
+Once created, a block is registered and becomes available inside block pickers alongside native blocks.
+
+Each custom block must define a schema. Wombat uses this schema to:
+
+- Validate data at runtime
+- Protect against malformed content
+- Surface errors safely within the UI
+- Enable forward-compatible evolution of block APIs
+
+This ensures extensibility without sacrificing structural safety. Developers gain flexibility, while the system retains guarantees around correctness and stability.
+
+---
+
+## 4. Product Direction & Core Insight
+
+Wombat reinforced a core belief:
+
+Well‑architected systems shape better products and better workflows.
+
+Most content platforms allow visual customization, but they do not feel systemic — because they are not driven by a true design system.
+
+In Wombat, the goal was different.
+
+- The design system is not decorative — it is structural.
+- If you edit the design system - it must cascade.
+- Content creation is constrained by components, not ad‑hoc layout decisions.
+- Builders feel like operating within a system, not styling a canvas.
+
+By investing in:
+
+- Schema validation
+- Structured block APIs
+- Clear separation of draft vs persisted state
+- Deterministic theming rules
+- Explicit component boundaries
+
+The product becomes:
+
+- Predictable for designers
+- Fast for marketers
+- Safe for engineering
+- Extensible for future products
+
+Architecture was not an implementation detail — it directly influenced team workflow, governance, and UX quality.
+
+---
+
+## 5. Relationship to ThemeOS
+
+Wombat is the environment where the theming architecture that became ThemeOS was originally developed.
+
+Over time, the theming system proved:
+
+- Portable
+- Reusable
+- More broadly applicable than just website generation
+
+When starting new projects, it became clear that this subsystem had utility outside of Wombat.
+
+Extracting it into ThemeOS formalized what had previously been internal infrastructure.
+
+---
+
+## 6. Next Steps
+
+Wombat is approaching an initial closed release, with the next phase focused on expanding its capabilities in production.
+
+Near-term focus:
+
+- AI-assisted content editing and generation, grounded in structured block schemas
+- AI-assisted theme creation using the same token system that powers runtime theming
+- Continued evolution toward a broader “Brand OS” model
+- Opening parts of the system to external developers via libraries and packages

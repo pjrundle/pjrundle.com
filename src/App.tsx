@@ -1,68 +1,57 @@
-import { ComponentType, Suspense, useEffect, useRef } from "react";
-import { useLocation } from "wouter";
+import { SkinProvider, TokensProvider } from "@theme-os/react";
+import { Suspense, useEffect } from "react";
+import { Route, Switch, useLocation } from "wouter";
 
+import { Footer } from "./components/Footer.tsx";
+import { Header } from "./components/Header.tsx";
+import { tokenStore } from "./design-system/design-system.ts";
+import { Page404 } from "./pages/404/404.tsx";
 import { Home } from "./pages/Home/Home.tsx";
+import { ProjectPage } from "./pages/Projects/Project.tsx";
+
+// Design: Sometimes useful to disable images to focus on layout/spacing more easily
+export const DISABLE_IMAGES = false;
 
 // Prevent browser from restoring scroll position on refresh
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
-const ScrollToTop = () => {
+const ScrollToTopOnRouteChange = () => {
   const [location] = useLocation();
-  useEffect(() => window.scrollTo(0, 0), [location]);
+  useEffect(() => window.scrollTo({ top: 0 }), [location]);
   return null;
 };
 
-// Route configuration
-const routes: { path: string; Component: ComponentType }[] = [
-  { path: "/", Component: Home },
-];
-
-// Keeps visited routes mounted, hides inactive ones with CSS
-const KeepAliveRoutes = () => {
-  const [location] = useLocation();
-  const visitedRef = useRef<Set<string>>(new Set([location]));
-
-  // Track visited routes
-  if (!visitedRef.current.has(location)) {
-    visitedRef.current.add(location);
-  }
-
-  return (
-    <>
-      {routes.map(({ path, Component }) => {
-        const isActive = location === path;
-        const hasVisited = visitedRef.current.has(path);
-
-        // Only render if visited (lazy mount on first visit)
-        if (!hasVisited) return null;
-
-        return (
-          <div key={path} style={{ display: isActive ? "block" : "none" }}>
-            <Suspense>
-              <Component />
-            </Suspense>
-          </div>
-        );
-      })}
-    </>
-  );
-};
-
-const App__Inner = () => {
-  return (
-    <>
-      <ScrollToTop />
-      <main>
-        <div className="bg:color-gray-25">
-          <KeepAliveRoutes />
-        </div>
-      </main>
-    </>
-  );
-};
-
 export function App() {
-  return <App__Inner />;
+  return (
+    <>
+      <ScrollToTopOnRouteChange />
+
+      <TokensProvider store={tokenStore}>
+        <SkinProvider colorMode="dark">
+          <div className="min-w:360px rel background-color:color-gray-0">
+            <Header />
+
+            <main className="rel">
+              <Switch>
+                <Route path="/">
+                  <Home />
+                </Route>
+                <Route path="/projects/:slug">
+                  <Suspense fallback={null}>
+                    <ProjectPage />
+                  </Suspense>
+                </Route>
+                <Route>
+                  <Page404 />
+                </Route>
+              </Switch>
+            </main>
+            <Footer />
+          </div>
+        </SkinProvider>
+      </TokensProvider>
+    </>
+  );
 }

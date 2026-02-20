@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+  "images": {
+    "sizes": [400, 800, 1200, 1600, 2400],
+    "localPatterns": [
+      {
+        "pathname": "^/projects/.*$",
+        "search": ""
+      }
+    ],
+    "minimumCacheTTL": 2592000,
+    "formats": ["image/avif", "image/webp"]
+  }
+}
