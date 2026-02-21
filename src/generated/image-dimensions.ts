@@ -39,12 +39,12 @@ export const imageDimensions: Record<string, { w: number; h: number }> = {
     "h": 68
   },
   "/projects/brandwatch/hero/hero.png": {
-    "w": 1400,
-    "h": 553
+    "w": 1440,
+    "h": 569
   },
   "/projects/ciq/hero/hero.png": {
-    "w": 1400,
-    "h": 553
+    "w": 1440,
+    "h": 569
   },
   "/projects/theme-os/gallery/theme-os-color.png": {
     "w": 1400,
@@ -83,8 +83,8 @@ export const imageDimensions: Record<string, { w: number; h: number }> = {
     "h": 954
   },
   "/projects/theme-os/hero/hero.png": {
-    "w": 1400,
-    "h": 553
+    "w": 1440,
+    "h": 569
   },
   "/projects/wmbt/gallery/0.png": {
     "w": 1440,
@@ -115,7 +115,7 @@ export const imageDimensions: Record<string, { w: number; h: number }> = {
     "h": 1038
   },
   "/projects/wmbt/gallery/figma-import-success.png": {
-    "w": 1440,
+    "w": 1286,
     "h": 1604
   },
   "/projects/wmbt/gallery/g.png": {
@@ -133,10 +133,6 @@ export const imageDimensions: Record<string, { w: number; h: number }> = {
   "/projects/wmbt/gallery/j.png": {
     "w": 1440,
     "h": 1034
-  },
-  "/projects/wmbt/gallery/k.png": {
-    "w": 1204,
-    "h": 546
   },
   "/projects/wmbt/gallery/l.png": {
     "w": 1440,
@@ -162,8 +158,12 @@ export const imageDimensions: Record<string, { w: number; h: number }> = {
     "w": 1440,
     "h": 900
   },
+  "/projects/wmbt/gallery/toolbar-theme-switch.png": {
+    "w": 1204,
+    "h": 266
+  },
   "/projects/wmbt/hero/hero.png": {
-    "w": 1400,
-    "h": 553
+    "w": 1440,
+    "h": 569
   }
 };

@@ -101,7 +101,7 @@ export const GalleryModal = ({
             key={currentItem.src}
             src={currentItem.src}
             alt={currentItem.alt}
-            className="abs-center max-h:100% max-w:100%"
+            className="abs-center max-h:100% max-w:100% b:1px|solid|color-alpha-200"
             style={{ opacity: 0, transition: "opacity 0.2s" }}
             onLoad={(e) => (e.currentTarget.style.opacity = "1")}
             onClick={(e) => {

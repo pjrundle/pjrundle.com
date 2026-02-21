@@ -38,7 +38,7 @@ export default [
     alt: "Media can be organized into folders",
   },
   {
-    src: "/projects/wmbt/gallery/k.png",
+    src: "/projects/wmbt/gallery/toolbar-theme-switch.png",
     alt: "Theme editing and switching is always available",
   },
   {
