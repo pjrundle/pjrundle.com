@@ -44,7 +44,7 @@ export const projectsManifest: TProjectManifestEntry[] = [
     slug: "wombat",
     title: "Wombat",
     tagline:
-      "Create websites, decks and more with Wombat – a design system powered CMS platform.",
+      "Create websites, decks and more with a design system powered CMS platform.",
     role: "Design | Front-End Architect + Engineer • Co-Founder",
     heroImgSrc: "/projects/wmbt/hero/hero.png",
     scope: "Conception, design, research, development",

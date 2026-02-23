@@ -6,27 +6,36 @@
 
 Wombat was heavily influenced by my time building systems at Brandwatch.
 
-At Brandwatch, the web platform operated across 5–10 active websites at any time, each containing thousands of pieces of content produced by marketers, legal teams, and product teams – all of which had to adhere to strict brand guidelines.
+At Brandwatch, the web platform supported 5–10 active sites at any time, each containing thousands of pieces of content produced continuously by marketing, legal, and product teams — all under strict brand governance.
 
-This was enabled by and underlying design system and component library, paired with multiple specialized "builder" systems tailored to produce different content types:
+- Millions of visits annually
+- Thousands of published pages
+- 24/7 content production
+
+This was enabled by an underlying design system and component library, paired with multiple specialized "builder" systems tailored to produce different content types:
 
 - Product pages
 - Industry pages
-- Use case pages
+- Use Case pages
 - Case Studies, Reports and Guides
 - Webinars
 - Emails
-- Legal documents / hubs
-- Event microsites
-- Etc...
+- Legal Documents / Hubs
+- Event Microsites
+
+This approach allowed small teams to produce large volumes of consistent, on-brand content without engineering or design involvement.
 
 “Flagship pages” — homepages, major product launches, one‑off campaigns, and internal apps — were normally custom built.
 
-Design direction was led by the design team (CDO, art director, web designers - including myself). Marketers and internal teams used the structured builder systems to produce high‑volume, on‑brand content at speed.
+Design direction was led by the design team (CDO, art director, web designers — including me). Marketers and internal teams used the structured builder systems to produce high‑volume, on‑brand content at speed.
 
 After leaving Brandwatch, Wombat was designed as a natural evolution of this core idea — incorporating those learnings, but built from the ground up using modern tooling and with full architectural control.
 
 Wombat can be thought of as a design‑system‑powered content creation tool.
+
+The goal is to provide common, undifferentiated components and layouts that can cover the majority of use cases, whilst having built-in paths to seamlessly create truly custom blocks and content — all consuming the active design system.
+
+For example, a flagship homepage might be interactive/"artisan" in nature. Here, one or more custom blocks are appropriate. For other pages that don’t justify the same investment/customization, provided blocks and templates are ready to go immediately. Both approaches can be mixed and matched – e.g a custom page that uses a few Wombat provided blocks.
 
 ---
 
@@ -63,6 +72,39 @@ This approach keeps pages predictable while still allowing flexibility where nec
 
 To avoid drift and maintenance overhead, block authors are not required to create separate thumbnail representations for pickers. Instead, a lightweight preview component renders and scales the real block to a fixed aspect ratio, ensuring thumbnails are always accurate and stylistically consistent.
 
+```tsx
+// index.js
+// ---------------------------------------------------------------
+
+export default createBlockDefinition({
+  schema: STextModuleBlock,
+  Template: BTextModule,
+  initialData: (): TTextModuleBlock => ({
+    // initial data for the block can be set by the developer here
+  }),
+  meta: {
+    medium: ["Site"],
+    category: ["Text.TextModule"],
+    description:
+      "Short text content block for headings, paragraphs, and brief content",
+    label: "Text Module",
+  },
+});
+
+// BTextModule.tsx
+// ---------------------------------------------------------------
+
+import { Block, TextModule } from "@wmbt";
+
+export default function BTextModule() {
+  return (
+    <Block>
+      <TextModule optional={["btns", "label", "prose"]} />
+    </Block>
+  );
+}
+```
+
 ### Schema‑Validated Blocks
 
 Each block is validated against a defined schema.
@@ -73,6 +115,14 @@ Each block is validated against a defined schema.
 - Surfaces validation errors directly in the UI
 
 Blocks are wrapped in error boundaries to avoid full‑page failure, prioritizing graceful degradation.
+
+<figure>
+  <img
+    src="/projects/wmbt/gallery/block-data-validation.png"
+    alt="Block data validation errors in the UI"
+  />
+  <figcaption>Block data validation errors in the UI</figcaption>
+</figure>
 
 ### Design System Integration
 
@@ -89,9 +139,9 @@ Two styling systems often needed to coexist in the same DOM environment — prod
 
 ### Editor‑First Components
 
-What does editing a website look like in 2026?
+Editing is inline by default.
 
-For many structured/editorial CMS platforms, editing still means form‑based control panels disconnected from the rendered page. While functional, this does create cognitive distance between configuration and output.
+For many structured/editorial CMS platforms, editing still means form‑based control panels disconnected from the rendered page. While functional, this does create cognitive distance between configuration and output. We wanted editing to feel fluid, fast, modern, and also to aid “designing” in the browser – editing text in situ, moving elements around as you would in a tool like Figma.
 
 As such, we chose inline editing as the primary interaction model.
 
@@ -227,7 +277,7 @@ Over time, the theming system proved:
 
 When starting new projects, it became clear that this subsystem had utility outside of Wombat.
 
-Extracting it into ThemeOS formalized what had previously been internal infrastructure.
+ThemeOS was extracted from Wombat once it became clear the theming runtime had value beyond a single product.
 
 ---
 

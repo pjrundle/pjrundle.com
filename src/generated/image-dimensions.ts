@@ -150,9 +150,29 @@ export const imageDimensions: Record<string, { w: number; h: number }> = {
     "w": 1110,
     "h": 686
   },
+  "/projects/wmbt/gallery/block-data-validation.png": {
+    "w": 1440,
+    "h": 900
+  },
+  "/projects/wmbt/gallery/block-picker-general.png": {
+    "w": 1440,
+    "h": 900
+  },
+  "/projects/wmbt/gallery/block-picker-text.png": {
+    "w": 1440,
+    "h": 900
+  },
   "/projects/wmbt/gallery/c.png": {
     "w": 1439,
     "h": 782
+  },
+  "/projects/wmbt/gallery/cms-panel.png": {
+    "w": 1440,
+    "h": 900
+  },
+  "/projects/wmbt/gallery/deck-builder.png": {
+    "w": 1440,
+    "h": 900
   },
   "/projects/wmbt/gallery/different-theme.png": {
     "w": 1440,
@@ -205,6 +225,26 @@ export const imageDimensions: Record<string, { w: number; h: number }> = {
   "/projects/wmbt/gallery/move-c.png": {
     "w": 999,
     "h": 572
+  },
+  "/projects/wmbt/gallery/my-account-media.png": {
+    "w": 1440,
+    "h": 900
+  },
+  "/projects/wmbt/gallery/my-account-themes.png": {
+    "w": 1440,
+    "h": 900
+  },
+  "/projects/wmbt/gallery/my-account.png": {
+    "w": 1440,
+    "h": 900
+  },
+  "/projects/wmbt/gallery/responsive-web-previews.png": {
+    "w": 1440,
+    "h": 900
+  },
+  "/projects/wmbt/gallery/slide-picker.png": {
+    "w": 1440,
+    "h": 900
   },
   "/projects/wmbt/gallery/style-guide-in-sync.png": {
     "w": 1440,

@@ -54,6 +54,10 @@ export default [
     alt: "Here we have activated a different theme, and the page has updated to reflect it",
   },
   {
+    src: "/projects/wmbt/gallery/deck-builder.png",
+    alt: "Deck builder, consuming the same theme as the website",
+  },
+  {
     src: "/projects/wmbt/gallery/every-theme-has-a-style-guide.png",
     alt: "A style guide is automatically generated for each theme",
   },
@@ -68,5 +72,41 @@ export default [
   {
     src: "/projects/wmbt/gallery/figma-import-success.png",
     alt: "Wombat tokens ready for use in Figma",
+  },
+  {
+    src: "/projects/wmbt/gallery/block-data-validation.png",
+    alt: "Block data validation errors in the UI",
+  },
+  {
+    src: "/projects/wmbt/gallery/block-picker-general.png",
+    alt: "Block picker UI",
+  },
+  {
+    src: "/projects/wmbt/gallery/block-picker-text.png",
+    alt: "Block picker - Blocks can be organized into categories for discovery",
+  },
+  {
+    src: "/projects/wmbt/gallery/slide-picker.png",
+    alt: "Slide picker UI",
+  },
+  {
+    src: "/projects/wmbt/gallery/cms-panel.png",
+    alt: "CMS panel UI",
+  },
+  {
+    src: "/projects/wmbt/gallery/my-account.png",
+    alt: "My Account page UI",
+  },
+  {
+    src: "/projects/wmbt/gallery/my-account-themes.png",
+    alt: "My Account theme page UI",
+  },
+  {
+    src: "/projects/wmbt/gallery/my-account-media.png",
+    alt: "My Account media page UI",
+  },
+  {
+    src: "/projects/wmbt/gallery/responsive-web-previews.png",
+    alt: "Responsive web preview UI",
   },
 ];

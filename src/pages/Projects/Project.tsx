@@ -92,7 +92,7 @@ const ArticleSection = ({ slug }: { slug: string }) => {
                   "{content:'▶︎';mr:0.33em}_:is(h3):before",
                   "{mt:1.5em}_:is(h2+blockquote)",
                   "{border-color:color-gray-700}_:where(blockquote)",
-                  "{max-w:620px}_:where(h1,h2,h3,h4,h5,h6,p,ul,hr,blockquote,pre,code,table)",
+                  "{max-w:620px}_:where(h1,h2,h3,h4,h5,h6,p,ul,hr,blockquote,pre,code,table,img,figure)",
                 )}
               />
             ),
