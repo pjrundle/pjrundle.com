@@ -42,6 +42,58 @@ export const imageDimensions: Record<string, { w: number; h: number }> = {
     "w": 1440,
     "h": 569
   },
+  "/projects/ciq/gallery/a.png": {
+    "w": 1440,
+    "h": 829
+  },
+  "/projects/ciq/gallery/b.png": {
+    "w": 1400,
+    "h": 874
+  },
+  "/projects/ciq/gallery/c.png": {
+    "w": 1440,
+    "h": 900
+  },
+  "/projects/ciq/gallery/d.png": {
+    "w": 1400,
+    "h": 875
+  },
+  "/projects/ciq/gallery/e.png": {
+    "w": 1400,
+    "h": 875
+  },
+  "/projects/ciq/gallery/f.png": {
+    "w": 1400,
+    "h": 876
+  },
+  "/projects/ciq/gallery/g.png": {
+    "w": 1400,
+    "h": 875
+  },
+  "/projects/ciq/gallery/h.png": {
+    "w": 1400,
+    "h": 876
+  },
+  "/projects/ciq/gallery/i.png": {
+    "w": 1400,
+    "h": 875
+  },
+  "/projects/ciq/gallery/j.png": {
+    "w": 1400,
+    "h": 876
+  },
+  "/projects/ciq/gallery/k.png": {
+    "w": 1400,
+    "h": 875
+  },
+  "/projects/ciq/gallery/l.png": {
+    "w": 1400,
+    "h": 876
+  },
+  "/projects/ciq/gallery/m.png": {
+    "w": 1400,
+    "h": 875
+  },
   "/projects/ciq/hero/hero.png": {
     "w": 1440,
     "h": 569

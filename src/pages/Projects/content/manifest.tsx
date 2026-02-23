@@ -62,7 +62,8 @@ export const projectsManifest: TProjectManifestEntry[] = [
     scope: "Product discovery, front-end architecture, and delivery",
     logoAdjust: 0.91,
     logo: CIQLogo,
-    heroImgBgColorSecondary: "color-gray-100",
+    heroImgBgColor: "oklch(0.3|0.12|290.6)",
+    heroImgBgColorSecondary: "oklch(0.3|0.066|290.6)",
     button: {
       label: "View Early Prototype",
       href: "https://ciq-ui.vercel.app/",

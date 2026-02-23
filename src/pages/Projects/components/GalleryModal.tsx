@@ -96,12 +96,12 @@ export const GalleryModal = ({
       />
 
       <div className="w:100vw h:100vh py:26x px:6x p:20x@sm flex align-items:stretch justify-content:center">
-        <div className="w:full max-w:1440px rel user-select:none">
+        <div className="w:full max-w:1400px rel user-select:none">
           <img
             key={currentItem.src}
             src={currentItem.src}
             alt={currentItem.alt}
-            className="abs-center max-h:100% max-w:100% b:1px|solid|color-alpha-200"
+            className="abs-center max-h:100% max-w:100% b:1px|solid|color-alpha-100"
             style={{ opacity: 0, transition: "opacity 0.2s" }}
             onLoad={(e) => (e.currentTarget.style.opacity = "1")}
             onClick={(e) => {
