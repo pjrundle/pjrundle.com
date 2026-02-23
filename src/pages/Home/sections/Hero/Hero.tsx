@@ -4,7 +4,7 @@ export const Hero = () => {
   return (
     <section>
       <div className="page-gutter">
-        <div className="page-container-lg pb:16x@<sm pt:20x pb:21x pt:24x@2xl pb:26x@2xl">
+        <div className="page-container-lg pb:16x@<sm pt:20x pb:21x pt:22x@2xl pb:26x@2xl">
           <div className="grid gap:6x grid-cols:2@lg gap:0@lg">
             <div className="pr:7x@lg pr:14x@xl">
               <TextModule

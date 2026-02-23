@@ -6,7 +6,7 @@ export const Projects = () => {
     <section>
       <div className="page-gutter">
         <div className="page-container-lg bg:color-gray-25 b:border-b bb:none p:4x px:3.5x@<sm">
-          <h2 className="typestyle-meta f:10">Work</h2>
+          <h2 className="typestyle-meta f:10">Projects</h2>
         </div>
       </div>
 
