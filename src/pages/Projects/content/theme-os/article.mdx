@@ -12,6 +12,11 @@ Later, when building <Link href="/projects/wombat">Wombat,</Link> that core idea
 
 ThemeOS is the result of extracting that architecture into a standalone, boundary-agnostic design‑system runtime.
 
+<ArticleAssetContainer>
+  <div className="typestyle-copy f:0.7em mb:1em">High-Level Architecture</div>
+  <ArchitectureDiagram />
+</ArticleAssetContainer>
+
 ---
 
 ## 2. Constraints
@@ -25,6 +30,7 @@ ThemeOS was shaped by real constraints rather than idealized design‑system the
 - Supporting multiple styling systems in the same DOM
 - Should aid rapid prototyping/development
 - High performance requirements (runtime resolution, minimal overhead)
+- Expressive enough to describe most brands/themes and UI styles
 
 These constraints forced architectural clarity. The system needed to be expressive, transportable, and safe — without becoming heavy or over‑abstracted.
 
@@ -34,14 +40,10 @@ These constraints forced architectural clarity. The system needed to be expressi
 
 ThemeOS is built around a few core architectural decisions, with runtime behavior as a first‑class concern.
 
-<ArticleAssetContainer>
-  <div className="typestyle-copy f:0.7em mb:1em">High-Level Architecture</div>
-  <ArchitectureDiagram />
-</ArticleAssetContainer>
-
 ### Structured Token Schema
 
 ```ts
+// Powered by Arktype: https://arktype.io/
 const { errors, summary } = validateThemeOsTokenSet(designTokens);
 ```
 
@@ -81,6 +83,30 @@ Instead:
 
 This keeps the schema small while preserving expressive power.
 
+```ts
+const tokens = {
+  // ...
+  base: {
+    surface: {
+      floating: {
+        minor: {
+          color: {
+            bg: {
+              palette: "gray",
+              step: 50,
+            },
+            border: {
+              palette: "gray",
+              step: 200,
+            },
+          },
+        },
+      },
+    },
+  },
+};
+```
+
 ### Resolver Pattern
 
 A central resolver maps “raw” tokens to ”resolved” tokens.
@@ -89,10 +115,14 @@ Components can inspect and consume both raw and resolved tokens.
 
 This allows the author of a token set to reuse tokens like so:
 
-```json
-  vars: { radius: { default: 4 }},
+```ts
+const tokens = {
+  vars: { radius: { default: 4 } },
+  base: { ... },
   // later
-  surface: { card: { radius: "$vars.radius.default" }},
+  surface: { card: { radius: "$vars.radius.default" } }, // 4 (number)
+  // ...
+};
 ```
 
 ### Multi‑System DOM Support
@@ -107,14 +137,27 @@ ThemeOS supports this by:
 
 This was critical for Wombat, where both the product UI and user‑generated sites required independent theming.
 
-```ts
-export const tokens = {
-  "schemaVersion": "1.0.0",
-  "prefix": 'app', // namespaced when provided
-  "id": "wmbt-app-theme",
-  "defaultColorMode": "light",
-  ...
-}
+```tsx
+export const appTokens = {
+  id: "wmbt-app",
+  prefix: "app", // namespaced
+  defaultColorMode: "dark",
+  // ...
+};
+
+export const webTokens = {
+  id: "wmbt-web",
+  // no prefix
+  defaultColorMode: "light",
+  // ...
+};
+
+const Example = () => (
+  <>
+    <div className="bg:color-brand-a-200" />
+    <div className="bg:app-color-brand-a-200" />
+  </>
+);
 ```
 
 ### What This Unlocks
