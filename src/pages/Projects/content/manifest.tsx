@@ -63,7 +63,7 @@ export const projectsManifest: TProjectManifestEntry[] = [
     logoAdjust: 0.91,
     logo: CIQLogo,
     heroImgBgColor: "oklch(0.3|0.12|290.6)",
-    heroImgBgColorSecondary: "oklch(0.3|0.066|290.6)",
+    heroImgBgColorSecondary: "oklch(0.3|0.12|290.6)",
     button: {
       label: "View Early Prototype",
       href: "https://ciq-ui.vercel.app/",
