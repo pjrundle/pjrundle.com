@@ -14,6 +14,8 @@ export type TProjectManifestEntry = {
   heroImgSrc?: string;
   heroImgBgColor?: string;
   heroImgBgColorSecondary?: string;
+  heroImgBgColorMode?: "light" | "dark";
+  heroImgBorderColor?: string;
   logo: ComponentType<{ className?: string }>;
   logoAdjust: number;
   button?: {
@@ -64,6 +66,7 @@ export const projectsManifest: TProjectManifestEntry[] = [
     logo: CIQLogo,
     heroImgBgColor: "oklch(0.3|0.12|290.6)",
     heroImgBgColorSecondary: "oklch(0.3|0.12|290.6)",
+    heroImgBorderColor: "oklch(0.4|0.12|290.6)",
     button: {
       label: "View Early Prototype",
       href: "https://ciq-ui.vercel.app/",
@@ -75,12 +78,13 @@ export const projectsManifest: TProjectManifestEntry[] = [
     tagline:
       "Design and content systems powering Brandwatch’s global marketing engine.",
     heroImgSrc: "/projects/brandwatch/hero/hero.png",
-    heroImgBgColor: "color-gray-900",
     role: "Web Team Lead | Senior Front-End Designer/Developer",
     scope: "Design system, content builders, shared architectural foundations",
     logoAdjust: 1.1,
     logo: BrandwatchLogo,
-    heroImgBgColorSecondary: "color-gray-100",
+    heroImgBgColorMode: "light",
+    heroImgBgColor: "color-gray-150",
+    heroImgBgColorSecondary: "color-gray-dark-150",
     button: {
       label: "Visit Brandwatch",
       href: "https://www.brandwatch.com/products/consumer-research/",

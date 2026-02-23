@@ -28,14 +28,18 @@ export const ProjectHero = ({
 
         <div
           className={cn(
-            "b:border-b p:2x@md p:4x@lg p:6x@xl",
+            "b:1px|solid|color-gray-dark-150 p:2x@md p:4x@lg p:6x@xl",
+            projectEntry.heroImgBgColorMode === "light"
+              ? "light-mode"
+              : "dark-mode",
             `bg:${projectEntry.heroImgBgColorSecondary || "color-gray-50"}`,
           )}
         >
           <div
             className={cn(
               "r:radius-default@md shadow:shadow-xl@md",
-              "pt:65% pt:55%@sm pt:35%@md rel b:border-b@md overflow:hidden",
+              "pt:65% pt:55%@sm pt:35%@md rel overflow:hidden",
+              `b:1px|solid|${projectEntry.heroImgBorderColor || "color-gray-dark-150"}`,
               `bg:${projectEntry.heroImgBgColor || "color-gray-200"}`,
             )}
           >

@@ -19,6 +19,7 @@ export const ProjectCard = ({
     tagline,
     heroImgSrc,
     heroImgBgColor,
+    heroImgBgColorMode,
     logo: LogoSvg,
     logoAdjust,
     slug,
@@ -42,6 +43,7 @@ export const ProjectCard = ({
           <div
             className={cn(
               "rel overflow:hidden static@md",
+              heroImgBgColorMode === "light" ? "light-mode" : "dark-mode",
               `bg:${heroImgBgColor || "color-gray-200"}`,
             )}
           >
