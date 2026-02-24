@@ -22,7 +22,7 @@ export const Hero = () => {
 
             <div className="flex align-items:end">
               <div className="pr:2x pr:14x@sm pl:6x@lg rel">
-                <span className="hidden block@lg abs top:4px bottom:4px left:-2px w:3px bg:color-gray-700"></span>
+                <span className="hidden block@lg abs top:4px bottom:2px left:-2px w:3px bg:color-gray-700"></span>
                 <TextModule
                   variant="block.hero"
                   classNameCopy="max-w:65ch@lg text-wrap:pretty@lg"
@@ -37,8 +37,9 @@ export const Hero = () => {
                     </>
                   }
                 />
-                <p className="typestyle-meta leading:1.4 f:10 mt:5x">
-                  Available for: senior roles, contract, advisory
+                <p className="typestyle-meta bt:border-b pt:4x leading:1.4 f:10 mt:4x flex gap-x:1.5x align-items:center">
+                  <span className="color:color-gray-700">Available for:</span>{" "}
+                  <span>senior roles, contract, advisory</span>
                 </p>
               </div>
             </div>
