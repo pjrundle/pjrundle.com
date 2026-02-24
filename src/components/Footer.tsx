@@ -1,6 +1,7 @@
 import { Button, TextModule } from "@theme-os/react";
 import { PAccessibleLink } from "@theme-os/react-primitives";
 import { cn } from "@theme-os/utils";
+import { Link } from "wouter";
 
 import { PJRGlyph } from "../assets/PJRGlyph.tsx";
 
@@ -13,9 +14,13 @@ const FooterLink = ({
   label: string;
   disabled?: boolean;
 }) => {
+  const isInternal = href.startsWith("/");
+
+  const Tag = isInternal ? Link : PAccessibleLink;
+
   return (
     <div className={cn(disabled && "cursor:not-allowed opacity:0.5")}>
-      <PAccessibleLink
+      <Tag
         href={href}
         newTab={true}
         aria-disabled={disabled}
@@ -27,7 +32,7 @@ const FooterLink = ({
         )}
       >
         {label}
-      </PAccessibleLink>
+      </Tag>
     </div>
   );
 };
@@ -65,17 +70,10 @@ export const Footer = () => {
             </div>
 
             <nav className="flex gap:6x gap:8x@sm f:12">
-              <FooterLink href="https://theme-os.vercel.app/" label="ThemeOS" />
-              <FooterLink
-                href="https://wombat.vercel.app/"
-                label="Wombat"
-                disabled
-              />
-              <FooterLink
-                href="https://milemap.vercel.app/"
-                label="Milemap"
-                disabled
-              />
+              <FooterLink href="/projects/theme-os" label="ThemeOS" />
+              <FooterLink href="/projects/wombat" label="Wombat" />
+              <FooterLink href="/projects/cloud-iq" label="Cloud.IQ" />
+              <FooterLink href="/projects/brandwatch" label="Brandwatch" />
             </nav>
           </div>
 
