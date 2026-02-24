@@ -1,5 +1,13 @@
 export default [
   {
+    src: "/projects/brandwatch/gallery/screens.png",
+    alt: "A set of example pages from brandwatch.com",
+  },
+  {
+    src: "/projects/brandwatch/gallery/p-lib.png",
+    alt: "The central component/pattern library",
+  },
+  {
     src: "/projects/brandwatch/gallery/home.png",
     alt: "Brandwatch.com homepage",
   },
@@ -19,18 +27,18 @@ export default [
     src: "/projects/brandwatch/gallery/retail.png",
     alt: "Example page builder page (Retail)",
   },
-  {
-    src: "/projects/brandwatch/gallery/consumer-research-full-page.png",
-    alt: "Example Brandwatch.com product page for Consumer Research",
-  },
-  {
-    src: "/projects/brandwatch/gallery/industry-page.png",
-    alt: "Example industry page built with tailored page builder",
-  },
-  {
-    src: "/projects/brandwatch/gallery/blog-home.png",
-    alt: "Brandwatch Blog homepage",
-  },
+  // {
+  //   src: "/projects/brandwatch/gallery/consumer-research-full-page.png",
+  //   alt: "Example Brandwatch.com product page for Consumer Research",
+  // },
+  // {
+  //   src: "/projects/brandwatch/gallery/industry-page.png",
+  //   alt: "Example industry page built with tailored page builder",
+  // },
+  // {
+  //   src: "/projects/brandwatch/gallery/blog-home.png",
+  //   alt: "Brandwatch Blog homepage",
+  // },
   {
     src: "/projects/brandwatch/gallery/audiences.png",
     alt: "Simple color theming for product coloration",
@@ -51,12 +59,16 @@ export default [
     src: "/projects/brandwatch/gallery/nyk.png",
     alt: "A set of sites built for Now You Know conference",
   },
-  {
-    src: "/projects/brandwatch/gallery/buzzsumo-prototype-homepage.png",
-    alt: "Example of a rapidly built hi-fidelity page consuming the underlying design system for cross-brand consistency",
-  },
-  {
-    src: "/projects/brandwatch/gallery/buzzsumo-blog.png",
-    alt: "Used across BuzzSumo's blog",
-  },
+  // {
+  //   src: "/projects/brandwatch/gallery/mbp.png",
+  //   alt: "Digital consumer research product page",
+  // },
+  // {
+  //   src: "/projects/brandwatch/gallery/buzzsumo-prototype-homepage.png",
+  //   alt: "Example of a rapidly built hi-fidelity page consuming the underlying design system for cross-brand consistency",
+  // },
+  // {
+  //   src: "/projects/brandwatch/gallery/buzzsumo-blog.png",
+  //   alt: "Used across BuzzSumo's blog",
+  // },
 ];
