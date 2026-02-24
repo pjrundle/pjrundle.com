@@ -141,7 +141,7 @@ export const GalleryModal = ({
       />
 
       {currentItem.alt && (
-        <div className="abs-center-x w:50% t:center bottom:8x typestyle-copy f:11">
+        <div className="abs-center-x w:50% t:center bottom:8x typestyle-copy f:11 text-shadow:1px|1px|0|black">
           {currentItem.alt}
         </div>
       )}

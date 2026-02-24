@@ -1,7 +1,7 @@
 /**
  * Allowed widths for Vercel Image Optimization (must match vercel.json images.sizes).
  */
-const ALLOWED_SIZES = [400, 800, 1200, 1600, 2400] as const;
+const ALLOWED_SIZES = [200, 400, 800, 1200, 1600, 2400] as const;
 
 const nearestAllowedSize = (width: number): number => {
   return ALLOWED_SIZES.reduce((prev, curr) =>

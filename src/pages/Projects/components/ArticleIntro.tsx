@@ -34,30 +34,41 @@ export const ArticleIntro = ({
 }) => {
   return (
     <section className={className}>
-      <div className="mb:4x flex align-items:end justify-content:space-between">
-        <h2 className="typestyle-heading f:18">About</h2>
-        <MicrositeButton
-          projectEntry={projectEntry}
-          className="hidden@lg f:11"
-        />
-      </div>
-
-      <div className="flex@lg bt:border-a">
-        <div className="typestyle-copy flex:1 f:12 bb:border-a {py:2x;bt:border-a}_p">
-          <p className="bt:none!">
-            <strong>Role:</strong> {projectEntry.role}
-          </p>
-          <p>
-            <strong>Scope:</strong> {projectEntry.scope}
-          </p>
+      <div>
+        <div className="mb:4x flex align-items:end justify-content:space-between">
+          <h2 className="typestyle-heading f:18">About</h2>
+          <MicrositeButton
+            projectEntry={projectEntry}
+            className="hidden@lg f:11"
+          />
         </div>
-
-        {projectEntry.button && (
-          <div className="f:11 hidden flex@lg align-items:center justify-content:center px:6x bb:border-a bl:border-a">
-            <MicrositeButton projectEntry={projectEntry} />
+        <div className="flex@lg bt:border-a">
+          <div className="typestyle-copy flex:1 f:12 bb:border-a {py:2x;bt:border-a}_p">
+            <p className="bt:none!">
+              <strong>Role:</strong> {projectEntry.role}
+            </p>
+            <p>
+              <strong>Scope:</strong> {projectEntry.scope}
+            </p>
           </div>
-        )}
+          {projectEntry.button && (
+            <div className="f:11 hidden flex@lg align-items:center justify-content:center px:6x bb:border-a bl:border-a">
+              <MicrositeButton projectEntry={projectEntry} />
+            </div>
+          )}
+        </div>
       </div>
+
+      {projectEntry.stats && projectEntry.stats.length > 0 && (
+        <div className="flex gap-x:12x mt:6x">
+          {projectEntry.stats.map((stat) => (
+            <div key={stat.label}>
+              <div className="typestyle-display f:40px">{stat.stat}</div>
+              <div className="typestyle-meta mt:1x f:10">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 };

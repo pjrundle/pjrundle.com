@@ -8,6 +8,9 @@ export type TGalleryItemImage = {
   alt: string;
 };
 
+export const galleryGridClasses =
+  "grid grid-cols:5@<400px grid-cols:8 grid-cols:8@sm grid-cols:10@md grid-cols:5@lg grid-cols:4@2xl gap:2x {b:border-b}_img";
+
 export const Gallery = ({
   items,
   className,
@@ -22,7 +25,7 @@ export const Gallery = ({
   return (
     <>
       <div className={className}>
-        <div className="grid grid-cols:3 grid-cols:4@sm grid-cols:3@lg gap:2x {b:border-b}_img">
+        <div className={galleryGridClasses}>
           {items.map((item, i) => (
             <button
               key={`${i}-${item.src}`}
@@ -36,7 +39,7 @@ export const Gallery = ({
             >
               {(() => {
                 const { src, srcSet } = getOptimizedImageUrl(item.src, {
-                  width: 400,
+                  width: 250,
                 });
                 return (
                   <img
@@ -44,7 +47,7 @@ export const Gallery = ({
                     srcSet={srcSet || undefined}
                     alt={item.alt}
                     loading="lazy"
-                    className="aspect:16/9 object:cover w:100% block"
+                    className="aspect:1/1 object:cover object-position:top w:100% block"
                   />
                 );
               })()}

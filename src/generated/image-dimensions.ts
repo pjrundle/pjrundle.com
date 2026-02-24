@@ -38,117 +38,201 @@ export const imageDimensions: Record<string, { w: number; h: number }> = {
     "w": 68,
     "h": 68
   },
+  "/projects/brandwatch/gallery/audiences.png": {
+    "w": 1439,
+    "h": 830
+  },
+  "/projects/brandwatch/gallery/blog-home.png": {
+    "w": 1440,
+    "h": 2322
+  },
+  "/projects/brandwatch/gallery/buzzsumo-blog.png": {
+    "w": 1440,
+    "h": 1072
+  },
+  "/projects/brandwatch/gallery/buzzsumo-prototype-homepage.png": {
+    "w": 1440,
+    "h": 5254
+  },
+  "/projects/brandwatch/gallery/careers.png": {
+    "w": 1400,
+    "h": 874
+  },
+  "/projects/brandwatch/gallery/consumer-research-full-page.png": {
+    "w": 1213,
+    "h": 4060
+  },
+  "/projects/brandwatch/gallery/cpg.png": {
+    "w": 1400,
+    "h": 874
+  },
+  "/projects/brandwatch/gallery/cr.png": {
+    "w": 1400,
+    "h": 874
+  },
+  "/projects/brandwatch/gallery/dci.png": {
+    "w": 1400,
+    "h": 874
+  },
+  "/projects/brandwatch/gallery/email-sys.png": {
+    "w": 1440,
+    "h": 1165
+  },
+  "/projects/brandwatch/gallery/home.png": {
+    "w": 1400,
+    "h": 875
+  },
+  "/projects/brandwatch/gallery/industry-page.png": {
+    "w": 1440,
+    "h": 2803
+  },
+  "/projects/brandwatch/gallery/mbp.png": {
+    "w": 1440,
+    "h": 917
+  },
+  "/projects/brandwatch/gallery/nyk.png": {
+    "w": 1440,
+    "h": 1017
+  },
+  "/projects/brandwatch/gallery/otter-editor.png": {
+    "w": 1175,
+    "h": 1153
+  },
+  "/projects/brandwatch/gallery/p-lib.png": {
+    "w": 1440,
+    "h": 1531
+  },
+  "/projects/brandwatch/gallery/retail.png": {
+    "w": 1400,
+    "h": 874
+  },
+  "/projects/brandwatch/gallery/screens.png": {
+    "w": 1440,
+    "h": 1531
+  },
+  "/projects/brandwatch/gallery/smc-desktop.png": {
+    "w": 994,
+    "h": 1193
+  },
+  "/projects/brandwatch/gallery/smc-mob.png": {
+    "w": 729,
+    "h": 913
+  },
+  "/projects/brandwatch/hero/hero-2.png": {
+    "w": 1440,
+    "h": 569
+  },
   "/projects/brandwatch/hero/hero.png": {
     "w": 1440,
     "h": 569
   },
-  "/projects/ciq/gallery/a.png": {
-    "w": 1440,
-    "h": 829
+  "/projects/ciq/gallery/audience-builder.png": {
+    "w": 1400,
+    "h": 876
   },
-  "/projects/ciq/gallery/b.png": {
+  "/projects/ciq/gallery/customers.png": {
+    "w": 1400,
+    "h": 876
+  },
+  "/projects/ciq/gallery/dashboard-charts.png": {
+    "w": 1400,
+    "h": 875
+  },
+  "/projects/ciq/gallery/dashboard-overview.png": {
+    "w": 1400,
+    "h": 875
+  },
+  "/projects/ciq/gallery/flow-builder-b.png": {
+    "w": 1400,
+    "h": 875
+  },
+  "/projects/ciq/gallery/flow-builder.png": {
+    "w": 1400,
+    "h": 876
+  },
+  "/projects/ciq/gallery/import-form.png": {
+    "w": 1400,
+    "h": 875
+  },
+  "/projects/ciq/gallery/login.png": {
     "w": 1400,
     "h": 874
   },
-  "/projects/ciq/gallery/c.png": {
+  "/projects/ciq/gallery/marketing-platform-page.png": {
+    "w": 1400,
+    "h": 876
+  },
+  "/projects/ciq/gallery/marketing-site-black-friday.png": {
+    "w": 1400,
+    "h": 875
+  },
+  "/projects/ciq/gallery/marketing-site.png": {
+    "w": 1400,
+    "h": 875
+  },
+  "/projects/ciq/gallery/onboarding.png": {
     "w": 1440,
     "h": 900
   },
-  "/projects/ciq/gallery/d.png": {
-    "w": 1400,
-    "h": 875
+  "/projects/ciq/gallery/research.png": {
+    "w": 1440,
+    "h": 810
   },
-  "/projects/ciq/gallery/e.png": {
-    "w": 1400,
-    "h": 875
-  },
-  "/projects/ciq/gallery/f.png": {
-    "w": 1400,
-    "h": 876
-  },
-  "/projects/ciq/gallery/g.png": {
-    "w": 1400,
-    "h": 875
-  },
-  "/projects/ciq/gallery/h.png": {
-    "w": 1400,
-    "h": 876
-  },
-  "/projects/ciq/gallery/i.png": {
-    "w": 1400,
-    "h": 875
-  },
-  "/projects/ciq/gallery/j.png": {
-    "w": 1400,
-    "h": 876
-  },
-  "/projects/ciq/gallery/k.png": {
-    "w": 1400,
-    "h": 875
-  },
-  "/projects/ciq/gallery/l.png": {
-    "w": 1400,
-    "h": 876
-  },
-  "/projects/ciq/gallery/m.png": {
-    "w": 1400,
-    "h": 875
+  "/projects/ciq/gallery/screens.png": {
+    "w": 1440,
+    "h": 829
   },
   "/projects/ciq/hero/hero.png": {
     "w": 1440,
     "h": 569
   },
-  "/projects/theme-os/gallery/theme-os-color.png": {
+  "/projects/theme-os/gallery/color.png": {
     "w": 1400,
     "h": 875
   },
-  "/projects/theme-os/gallery/theme-os-controls.png": {
+  "/projects/theme-os/gallery/controls.png": {
     "w": 1400,
     "h": 875
   },
-  "/projects/theme-os/gallery/theme-os-kitchen-sink.png": {
+  "/projects/theme-os/gallery/kitchen-sink.png": {
     "w": 1400,
     "h": 875
   },
-  "/projects/theme-os/gallery/theme-os-prose.png": {
+  "/projects/theme-os/gallery/multiple-consumers.png": {
+    "w": 1440,
+    "h": 1122
+  },
+  "/projects/theme-os/gallery/prose.png": {
     "w": 1400,
     "h": 875
   },
-  "/projects/theme-os/gallery/theme-os-text-modules.png": {
-    "w": 1400,
-    "h": 875
-  },
-  "/projects/theme-os/gallery/theme-os-type.png": {
-    "w": 1400,
-    "h": 875
-  },
-  "/projects/theme-os/gallery/themeos-a.png": {
-    "w": 1400,
-    "h": 875
-  },
-  "/projects/theme-os/gallery/themeos-b.png": {
-    "w": 1400,
-    "h": 875
-  },
-  "/projects/theme-os/gallery/themeos-c.png": {
+  "/projects/theme-os/gallery/rich-environment.png": {
     "w": 1400,
     "h": 954
+  },
+  "/projects/theme-os/gallery/sample-theme-a.png": {
+    "w": 1400,
+    "h": 875
+  },
+  "/projects/theme-os/gallery/sample-theme-b.png": {
+    "w": 1400,
+    "h": 875
+  },
+  "/projects/theme-os/gallery/sample-theme-c.png": {
+    "w": 1440,
+    "h": 900
+  },
+  "/projects/theme-os/gallery/text-modules.png": {
+    "w": 1400,
+    "h": 875
+  },
+  "/projects/theme-os/gallery/type.png": {
+    "w": 1400,
+    "h": 875
   },
   "/projects/theme-os/hero/hero.png": {
     "w": 1440,
     "h": 569
-  },
-  "/projects/wmbt/gallery/0.png": {
-    "w": 1440,
-    "h": 516
-  },
-  "/projects/wmbt/gallery/1.png": {
-    "w": 1182,
-    "h": 658
-  },
-  "/projects/wmbt/gallery/2.png": {
-    "w": 1110,
-    "h": 686
   },
   "/projects/wmbt/gallery/block-data-validation.png": {
     "w": 1440,
@@ -162,13 +246,13 @@ export const imageDimensions: Record<string, { w: number; h: number }> = {
     "w": 1440,
     "h": 900
   },
-  "/projects/wmbt/gallery/c.png": {
-    "w": 1439,
-    "h": 782
-  },
   "/projects/wmbt/gallery/cms-panel.png": {
     "w": 1440,
     "h": 900
+  },
+  "/projects/wmbt/gallery/controls-consume-tokens.png": {
+    "w": 1110,
+    "h": 686
   },
   "/projects/wmbt/gallery/deck-builder.png": {
     "w": 1440,
@@ -177,6 +261,10 @@ export const imageDimensions: Record<string, { w: number; h: number }> = {
   "/projects/wmbt/gallery/different-theme.png": {
     "w": 1440,
     "h": 900
+  },
+  "/projects/wmbt/gallery/editable-inline-text.png": {
+    "w": 1440,
+    "h": 516
   },
   "/projects/wmbt/gallery/every-theme-has-a-style-guide.png": {
     "w": 1440,
@@ -190,29 +278,29 @@ export const imageDimensions: Record<string, { w: number; h: number }> = {
     "w": 1286,
     "h": 1604
   },
-  "/projects/wmbt/gallery/g.png": {
+  "/projects/wmbt/gallery/floating-ui-controls.png": {
+    "w": 1182,
+    "h": 658
+  },
+  "/projects/wmbt/gallery/floating-widgets.png": {
+    "w": 1439,
+    "h": 782
+  },
+  "/projects/wmbt/gallery/media-lib-archive.png": {
+    "w": 1440,
+    "h": 1109
+  },
+  "/projects/wmbt/gallery/media-lib-folder.png": {
+    "w": 1440,
+    "h": 1109
+  },
+  "/projects/wmbt/gallery/media-lib-theme-folder.png": {
+    "w": 1440,
+    "h": 1109
+  },
+  "/projects/wmbt/gallery/media-widget.png": {
     "w": 1198,
     "h": 1040
-  },
-  "/projects/wmbt/gallery/h.png": {
-    "w": 1440,
-    "h": 1004
-  },
-  "/projects/wmbt/gallery/i.png": {
-    "w": 1440,
-    "h": 1004
-  },
-  "/projects/wmbt/gallery/j.png": {
-    "w": 1440,
-    "h": 1034
-  },
-  "/projects/wmbt/gallery/l.png": {
-    "w": 1440,
-    "h": 900
-  },
-  "/projects/wmbt/gallery/m.png": {
-    "w": 1440,
-    "h": 900
   },
   "/projects/wmbt/gallery/move-a.png": {
     "w": 1358,
@@ -247,6 +335,18 @@ export const imageDimensions: Record<string, { w: number; h: number }> = {
     "h": 900
   },
   "/projects/wmbt/gallery/style-guide-in-sync.png": {
+    "w": 1440,
+    "h": 900
+  },
+  "/projects/wmbt/gallery/theme-editor-top-level.png": {
+    "w": 1440,
+    "h": 900
+  },
+  "/projects/wmbt/gallery/theme-editor.png": {
+    "w": 1233,
+    "h": 763
+  },
+  "/projects/wmbt/gallery/theme-switcher-ui.png": {
     "w": 1440,
     "h": 900
   },

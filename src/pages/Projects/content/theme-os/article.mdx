@@ -2,6 +2,31 @@
 
 This site is styled with ThemeOS.
 
+<ImageCycle
+  images={[
+    {
+      src: "/projects/theme-os/gallery/sample-theme-a.png",
+      alt: "ThemeOS sample theme A",
+    },
+    {
+      src: "/projects/theme-os/gallery/sample-theme-b.png",
+      alt: "ThemeOS sample theme B",
+    },
+    {
+      src: "/projects/theme-os/gallery/sample-theme-c.png",
+      alt: "ThemeOS sample theme C",
+    },
+  ]}
+  caption={
+    <>
+      Live switching as demoed on{" "}
+      <PAccessibleLink href="https://theme-os.vercel.app/" newTab={true}>
+        theme-os.com
+      </PAccessibleLink>
+    </>
+  }
+/>
+
 ---
 
 ## 1. Context
@@ -70,6 +95,18 @@ Theme configuration can be:
 - Swapped or edited dynamically
 
 Because tokens are resolved at runtime, applications consume a design system as data. This enables real‑time updates across multiple apps from a single source of truth.
+
+<ArticleImage
+  src="/projects/theme-os/gallery/multiple-consumers.png"
+  caption={
+    <>
+      Demo of multiple consumers - see{" "}
+      <PAccessibleLink href="https://theme-os.vercel.app/" newTab={true}>
+        theme-os.com
+      </PAccessibleLink>
+    </>
+  }
+/>
 
 ### Palette‑Driven UI Model
 

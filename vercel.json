@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [{ "source": "/(.*)", "destination": "/" }],
   "images": {
-    "sizes": [400, 800, 1200, 1600, 2400],
+    "sizes": [200, 400, 800, 1200, 1600, 2400],
     "localPatterns": [
       {
         "pathname": "^/projects/.*$",

@@ -1,4 +1,9 @@
-> **Wombat is a design-system-powered CMS for creating and evolving marketing websites – with the same system also supporting outputs like decks and other brand surfaces. It combines structured content, reusable components, and shared theming to enable fast production without sacrificing consistency or maintainability.**
+> **Wombat is a design-system-powered CMS for creating and evolving marketing websites – with the same system also supporting outputs like decks, emails and other brand surfaces. It combines structured content, reusable components, and shared theming to enable fast production without sacrificing consistency or maintainability.**
+
+<ArticleImage
+  src="/projects/wmbt/gallery/theme-editor.png"
+  caption="A few panes from Wombat’s floating theme editor"
+/>
 
 ---
 
@@ -116,13 +121,10 @@ Each block is validated against a defined schema.
 
 Blocks are wrapped in error boundaries to avoid full‑page failure, prioritizing graceful degradation.
 
-<figure>
-  <img
-    src="/projects/wmbt/gallery/block-data-validation.png"
-    alt="Block data validation errors in the UI"
-  />
-  <figcaption>Block data validation errors in the UI</figcaption>
-</figure>
+<ArticleImage
+  src="/projects/wmbt/gallery/block-data-validation.png"
+  caption="Block data validation errors in the UI"
+/>
 
 ### Design System Integration
 
@@ -151,6 +153,11 @@ As such, we chose inline editing as the primary interaction model.
 - If you want to move something – you drag it
 
 This significantly increased implementation complexity compared to traditional form‑based editing, but produced a more intuitive experience for non‑technical users.
+
+<ArticleImage
+  src="/projects/wmbt/gallery/1.png"
+  caption="Inline text editing"
+/>
 
 A second architectural principle followed from this decision.
 

@@ -7,6 +7,7 @@ import { Mdx } from "../../components/Mdx.tsx";
 import { Page404 } from "../404/404.tsx";
 import { ArticleAssetContainer } from "./components/ArticleAssetContainer.tsx";
 import { ArticleErrorBoundary } from "./components/ArticleErrorBoundary.tsx";
+import { ArticleImage } from "./components/ArticleImage.tsx";
 import { ArticleIntro } from "./components/ArticleIntro.tsx";
 import { ArticleLoadingIndicator } from "./components/ArticleLoadingIndicator.tsx";
 import { Gallery } from "./components/Gallery.tsx";
@@ -86,6 +87,7 @@ const ArticleSection = ({ slug }: { slug: string }) => {
                   Link,
                   PAccessibleLink,
                   ArticleAssetContainer,
+                  ArticleImage,
                   ...articleComponents,
                 }}
                 className={cn(
@@ -141,7 +143,7 @@ export const ProjectPage = () => {
             <div className="w:full w:66%@lg pt:12x pt:16x@xl pt:24x@2xl br:border-a@lg">
               <ArticleIntro
                 projectEntry={projectEntry}
-                className="hidden block@lg mb:10x mb:20x@2xl"
+                className="hidden block@lg mb:10x mb:16x@xl mb:20x@2xl"
               />
 
               <div className="pr:8x@lg f:14">

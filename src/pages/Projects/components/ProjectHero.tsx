@@ -17,13 +17,15 @@ export const ProjectHero = ({
   return (
     <div className="page-gutter">
       <div className="page-container-lg">
-        <div className="mt:16x mb:8x mb:12x@md mb:16x@2xl max-w:80%@md">
-          <TextModule
-            variant="block.feature"
-            overline={`Projects • ${projectEntry.title}`}
-            heading={projectEntry.tagline}
-            classNameHeading="text-wrap:balance@md pr:0x@lg"
-          />
+        <div className="flex mt:16x mb:8x mb:12x@md mb:16x@2xl">
+          <div className="w:100% w:66.66%@md">
+            <TextModule
+              variant="block.feature"
+              overline={`Projects • ${projectEntry.title}`}
+              heading={projectEntry.tagline}
+              classNameHeading="text-wrap:balance@md pr:0x@lg"
+            />
+          </div>
         </div>
 
         <div

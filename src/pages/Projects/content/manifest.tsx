@@ -11,6 +11,10 @@ export type TProjectManifestEntry = {
   role?: string;
   scope?: string;
   tagline?: string;
+  stats?: {
+    stat: string;
+    label: string;
+  }[];
   heroImgSrc?: string;
   heroImgBgColor?: string;
   heroImgBgColorSecondary?: string;
@@ -77,13 +81,14 @@ export const projectsManifest: TProjectManifestEntry[] = [
     title: "Brandwatch",
     tagline:
       "Design and content systems powering Brandwatch’s global marketing engine.",
-    heroImgSrc: "/projects/brandwatch/hero/hero.png",
+    heroImgSrc: "/projects/brandwatch/hero/hero-2.png",
     role: "Web Team Lead | Senior Front-End Designer/Developer",
     scope: "Design system, content builders, shared architectural foundations",
     logoAdjust: 1.1,
     logo: BrandwatchLogo,
     heroImgBgColorMode: "light",
-    heroImgBgColor: "color-gray-150",
+    heroImgBorderColor: "color-gray-dark-200",
+    heroImgBgColor: "color-gray-dark-900",
     heroImgBgColorSecondary: "color-gray-dark-150",
     button: {
       label: "Visit Brandwatch",

@@ -1,15 +1,18 @@
 export default [
-  { src: "/projects/wmbt/gallery/0.png", alt: "All text is editable in page" },
   {
-    src: "/projects/wmbt/gallery/1.png",
+    src: "/projects/wmbt/gallery/editable-inline-text.png",
+    alt: "All text is editable in page",
+  },
+  {
+    src: "/projects/wmbt/gallery/floating-ui-controls.png",
     alt: "Floating UI controls anchored to inline elements",
   },
   {
-    src: "/projects/wmbt/gallery/2.png",
+    src: "/projects/wmbt/gallery/controls-consume-tokens.png",
     alt: "Controls consume tokens from the design system",
   },
   {
-    src: "/projects/wmbt/gallery/c.png",
+    src: "/projects/wmbt/gallery/floating-widgets.png",
     alt: "Floating widgets provide more control over content",
   },
   {
@@ -24,17 +27,20 @@ export default [
     src: "/projects/wmbt/gallery/move-c.png",
     alt: "Even small elements like items in dropdown menus are draggable",
   },
-  { src: "/projects/wmbt/gallery/g.png", alt: "Example of a media widget" },
   {
-    src: "/projects/wmbt/gallery/h.png",
+    src: "/projects/wmbt/gallery/media-widget.png",
+    alt: "Example of a media widget",
+  },
+  {
+    src: "/projects/wmbt/gallery/media-lib-archive.png",
     alt: "Media Library is always available",
   },
   {
-    src: "/projects/wmbt/gallery/i.png",
+    src: "/projects/wmbt/gallery/media-lib-theme-folder.png",
     alt: "A special theme media folder allows theme authors to add curated media",
   },
   {
-    src: "/projects/wmbt/gallery/j.png",
+    src: "/projects/wmbt/gallery/media-lib-folder.png",
     alt: "Media can be organized into folders",
   },
   {
@@ -42,11 +48,11 @@ export default [
     alt: "Theme editing and switching is always available",
   },
   {
-    src: "/projects/wmbt/gallery/l.png",
+    src: "/projects/wmbt/gallery/theme-switcher-ui.png",
     alt: "Example of the theme switcher interface",
   },
   {
-    src: "/projects/wmbt/gallery/m.png",
+    src: "/projects/wmbt/gallery/theme-editor-top-level.png",
     alt: "Theme editor top level view",
   },
   {
