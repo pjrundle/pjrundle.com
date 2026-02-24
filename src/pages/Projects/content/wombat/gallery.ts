@@ -32,14 +32,6 @@ export default [
     alt: "Example of a media widget",
   },
   {
-    src: "/projects/wmbt/gallery/media-lib-archive.png",
-    alt: "Media Library is always available",
-  },
-  {
-    src: "/projects/wmbt/gallery/media-lib-theme-folder.png",
-    alt: "A special theme media folder allows theme authors to add curated media",
-  },
-  {
     src: "/projects/wmbt/gallery/media-lib-folder.png",
     alt: "Media can be organized into folders",
   },
@@ -68,10 +60,6 @@ export default [
     alt: "A style guide is automatically generated for each theme",
   },
   {
-    src: "/projects/wmbt/gallery/style-guide-in-sync.png",
-    alt: "The style guide is in sync with the theme",
-  },
-  {
     src: "/projects/wmbt/gallery/export-theme-to-figma.png",
     alt: "Design tokens can be exported to Figma",
   },
@@ -80,36 +68,12 @@ export default [
     alt: "Wombat tokens ready for use in Figma",
   },
   {
-    src: "/projects/wmbt/gallery/block-data-validation.png",
-    alt: "Block data validation errors in the UI",
-  },
-  {
-    src: "/projects/wmbt/gallery/block-picker-general.png",
-    alt: "Block picker UI",
-  },
-  {
-    src: "/projects/wmbt/gallery/block-picker-text.png",
-    alt: "Block picker - Blocks can be organized into categories for discovery",
-  },
-  {
     src: "/projects/wmbt/gallery/slide-picker.png",
     alt: "Slide picker UI",
   },
   {
     src: "/projects/wmbt/gallery/cms-panel.png",
     alt: "CMS panel UI",
-  },
-  {
-    src: "/projects/wmbt/gallery/my-account.png",
-    alt: "My Account page UI",
-  },
-  {
-    src: "/projects/wmbt/gallery/my-account-themes.png",
-    alt: "My Account theme page UI",
-  },
-  {
-    src: "/projects/wmbt/gallery/my-account-media.png",
-    alt: "My Account media page UI",
   },
   {
     src: "/projects/wmbt/gallery/responsive-web-previews.png",

@@ -334,10 +334,6 @@ export const imageDimensions: Record<string, { w: number; h: number }> = {
     "w": 1440,
     "h": 900
   },
-  "/projects/wmbt/gallery/style-guide-in-sync.png": {
-    "w": 1440,
-    "h": 900
-  },
   "/projects/wmbt/gallery/theme-editor-top-level.png": {
     "w": 1440,
     "h": 900
