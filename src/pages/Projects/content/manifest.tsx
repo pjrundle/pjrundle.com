@@ -43,7 +43,7 @@ export const projectsManifest: TProjectManifestEntry[] = [
     logo: ThemeOSGlyphWordmark,
     button: {
       label: "Go to Microsite",
-      href: "https://theme-os.vercel.app/",
+      href: "https://www.theme-os.com/",
     },
   },
   {

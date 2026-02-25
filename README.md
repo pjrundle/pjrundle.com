@@ -2,13 +2,13 @@
 
 Source code for my personal portfolio site.
 
-Built with React, TypeScript, and [ThemeOS](https://theme-os.vercel.app/) for styling.
+Built with React, TypeScript, and [ThemeOS](https://www.theme-os.com/) for styling.
 
 ## Tech Stack
 
 - **Framework:** React 18 + TypeScript
 - **Build Tool:** Vite
-- **Styling:** [ThemeOS](https://theme-os.vercel.app/) – a design system runtime with token-driven theming
+- **Styling:** [ThemeOS](https://www.theme-os.com/) – a design system runtime with token-driven theming
 - **Routing:** wouter
 - **Content:** MDX with syntax highlighting (rehype-prism-plus)
 - **Deployment:** Vercel
