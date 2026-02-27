@@ -47,7 +47,7 @@ export const Testimonials = () => {
   const stepper = useStepper({
     count: testimonialData.length,
     loop: true,
-    initialIndex: 1,
+    initialIndex: 0,
   });
 
   return (
