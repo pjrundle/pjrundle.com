@@ -1,4 +1,4 @@
-import { IconButton, TextModule } from "@theme-os/react";
+import { IconButton, Text, TextModule } from "@theme-os/react";
 import { cn } from "@theme-os/utils";
 
 import { PSliderTrack } from "../../../../temp/PSliderTrack.tsx";
@@ -51,9 +51,16 @@ export const Testimonials = () => {
   });
 
   return (
-    <section className=" mt:24x mt:40x@lg">
+    <section className="my:24x my:40x@md">
       <div className="page-gutter">
         <div className="page-container-lg">
+          <Text
+            typestyle="display"
+            className="f:16 mb:2x opacity:0.6 hidden block@xl"
+          >
+            What colleagues say
+          </Text>
+
           <div className="flex justify-content:space-between align-items:end bb:none mb:8x mb:12x@md">
             <div className="rel pr:8x@md">
               {testimonialHighlights.map((item, index) => {

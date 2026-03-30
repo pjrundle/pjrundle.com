@@ -43,7 +43,7 @@ export const TestimonialCard = ({
         </div>
 
         <div>
-          <p
+          <div
             className={cn(
               "pr:14x@md",
               "typestyle-copy leading:1.5 f:12 f:14@md",
@@ -53,7 +53,7 @@ export const TestimonialCard = ({
             )}
           >
             {testimonial}
-          </p>
+          </div>
           <p className="typestyle-meta leading:1.6 f:9 f:10@md mt:6x">
             <span className="color:color-gray-950">{name}</span>
             <span> – {meta}</span>

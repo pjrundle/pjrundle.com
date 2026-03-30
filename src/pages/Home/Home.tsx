@@ -1,3 +1,4 @@
+import { Experience } from "./sections/Experience/Experience.tsx";
 import { Hero } from "./sections/Hero/Hero.tsx";
 import { Projects } from "./sections/Projects/Projects.tsx";
 import { Testimonials } from "./sections/Testionials/Testimonials.tsx";
@@ -8,6 +9,7 @@ export const Home = () => {
       <Hero />
       <Projects />
       <Testimonials />
+      <Experience />
     </>
   );
 };

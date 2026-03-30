@@ -22,7 +22,6 @@ const FooterLink = ({
     <div className={cn(disabled && "cursor:not-allowed opacity:0.5")}>
       <Tag
         href={href}
-        newTab={true}
         aria-disabled={disabled}
         className={cn(
           "cursor:pointer",
@@ -30,6 +29,7 @@ const FooterLink = ({
           "typestyle-copy text-decoration:underline",
           disabled && "pointer-events:none",
         )}
+        {...(!isInternal && { newTab: true })}
       >
         {label}
       </Tag>
@@ -41,11 +41,13 @@ export const Footer = () => {
   return (
     <footer className="rel mt:24x mt:40x@xl mt:45x@2xl overflow:hidden">
       <div className="page-gutter">
-        <div className="page-container-lg px:5x px:10x@md pt:6.5x pb:7.5x pt:8x@sm pb:9.5x@sm pt:12x@md pb:14x@md b:border-b bb:none flex justify-content:start">
+        <div className="rel page-container-lg px:5x px:10x@md pt:6.5x pb:7.5x pt:8x@sm pb:9.5x@sm pt:12x@md pb:14x@md b:border-b bb:none flex justify-content:start bg:color-gray-0">
           <TextModule
             variant="block.base"
             heading={
-              <span className="f:display-lg@xl">hello@pjrundle.com</span>
+              <span className="pl:0.5x pl:0@md f:22@<sm">
+                hello@pjrundle.com
+              </span>
             }
           />
         </div>

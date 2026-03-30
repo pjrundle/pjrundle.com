@@ -11,13 +11,11 @@ export const testimonialData = [
           for design with a logical, systems driven approach to scalable
           front-end code and immaculate taste. Pete can take a project from
           ideation, through to concept, prototype, iteration and deployable,
-          production ready front-end code all as one single unit.
-        </p>
-        <p>
-          Pete operates at a level of perfection and quality that is best in
-          class, expertise of this type in a single discipline is rare to find
-          but Pete can achieve this across the stack. If you want to work with
-          the best then you wont find better.
+          production ready front-end code all as one single unit. Pete operates
+          at a level of perfection and quality that is best in class, expertise
+          of this type in a single discipline is rare to find but he can achieve
+          this across the stack. If you want to work with the best then you wont
+          find better.
         </p>
       </>
     ),
@@ -31,15 +29,15 @@ export const testimonialData = [
     text: (
       <>
         <p>
-          It’s fair to say Pete was an instant star in the business and really
-          wowed everyone with his combination of speed and quality. Not only
-          that Pete turned out to be the equal of our best developers from the
-          start, and played an active role in not only designing the UX but
-          delivering really great code to implement it. During the whole course
-          of Pete’s time with us, his involvement in the business became
-          stronger. Without a doubt with his eye for quality design, passion for
-          great architecture and pure coding ability, one of the most valuable
-          team members you could hope to work with.
+          Pete was an instant star in the business and really wowed everyone
+          with his combination of speed and quality. Not only that Pete turned
+          out to be the equal of our best developers from the start, and played
+          an active role in not only designing the UX but delivering really
+          great code to implement it. During the whole course of Pete’s time
+          with us, his involvement in the business became stronger. Without a
+          doubt with his eye for quality design, passion for great architecture
+          and pure coding ability, one of the most valuable team members you
+          could hope to work with.
         </p>
       </>
     ),
