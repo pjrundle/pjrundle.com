@@ -155,7 +155,7 @@ export const ProjectCard = ({
           )}
 
           <div className="abs inset:0 pointer-events:none">
-            <div className="abs inset:0 background-image:radial-gradient(circle,rgba(0,0,0,0),rgba(0,0,0,0),color-gray-0) opacity:0.75" />
+            {/* <div className="abs inset:0 background-image:radial-gradient(circle,rgba(0,0,0,0),rgba(0,0,0,0),color-gray-0) opacity:0.95" /> */}
             {/* <div className="abs inset:0 background-image:linear-gradient(to|bottom,rgba(0,0,0,0.01),rgba(0,0,0,0.1))" /> */}
 
             {designOptions.withProjectCardAssetLogos && (
