@@ -27,3 +27,13 @@ export const tokenStore = initThemeOs({
     },
   },
 });
+
+export const designOptions = {
+  centeredArticle: true,
+  withProjectCardLogos: true,
+  withProjectCardAssetLogos: false,
+  withProjectHeroImages: true,
+  withFullWidthSynopsis: false,
+  withPageTransitions: false,
+  withExperienceTextModule: true,
+};

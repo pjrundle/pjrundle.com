@@ -19,7 +19,7 @@ export const ArticleAssetContainer = ({
   size?: "default" | "lg";
 }) => {
   return (
-    <div className="my:2em">
+    <div className="my:2em article-asset-container">
       <div
         className={cn(
           "rel bg:color-gray-0 b:border-b px:1em py:1em page-container-lg",

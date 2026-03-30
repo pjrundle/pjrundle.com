@@ -8,7 +8,7 @@ export const Page404 = () => {
         <TextModule
           variant="block.hero"
           overline="Error 404"
-          heading="Nothing to see here"
+          heading="This page doesn't exist"
           copy="Try checking the URL, or go back to the homepage."
           buttons={[
             {

@@ -1,3 +1,4 @@
+import { cn } from "@theme-os/utils";
 import { useState } from "react";
 
 import { getOptimizedImageUrl } from "../../../utils/optimizedImage.ts";
@@ -9,7 +10,7 @@ export type TGalleryItemImage = {
 };
 
 export const galleryGridClasses =
-  "grid grid-cols:5@<400px grid-cols:8 grid-cols:8@sm grid-cols:10@md grid-cols:5@lg grid-cols:4@2xl gap:2x {b:border-b}_img";
+  "grid grid-cols:5@<400px grid-cols:8 grid-cols:8@sm grid-cols:10@md grid-cols:5@lg grid-cols:5@2xl gap:2x {b:border-b}_img";
 
 export const Gallery = ({
   items,
@@ -30,7 +31,11 @@ export const Gallery = ({
             <button
               key={`${i}-${item.src}`}
               type="button"
-              className="block w:100% bg:transparent cursor:pointer text-align:left"
+              style={{ opacity: 0.33 }}
+              className={cn(
+                "block w:100% bg:transparent cursor:pointer text-align:left",
+                "opacity:1!:hover transition:opacity|0.2s|linear",
+              )}
               aria-label={`View full size: ${item.alt}`}
               onClick={() => {
                 setIsOpen(true);

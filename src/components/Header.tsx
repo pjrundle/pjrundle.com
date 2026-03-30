@@ -6,8 +6,8 @@ import { Link } from "wouter";
 
 import { PJRGlyph } from "../assets/PJRGlyph.tsx";
 
-const LOGO_WIDTH_MOBILE = 68;
-const LOGO_WIDTH_MD = 80;
+const LOGO_WIDTH_MOBILE = 60;
+const LOGO_WIDTH_LG = 74;
 
 const Logo = () => {
   return (
@@ -15,7 +15,7 @@ const Logo = () => {
       href="/"
       aria-label="Home"
       className={cn(
-        `w:${LOGO_WIDTH_MOBILE}px w:${LOGO_WIDTH_MD}px@md`,
+        `w:${LOGO_WIDTH_MOBILE}px w:${LOGO_WIDTH_LG}px@lg`,
         "inline-block rel",
         "bg:color-gray-50 color:color-gray-900",
         "bg:color-gray-100:hover",
@@ -23,7 +23,7 @@ const Logo = () => {
       )}
     >
       <span className="aspect:1/1 block" />
-      <span className="abs-center-y left:38% w:29% w:31%@xl svg-asset">
+      <span className="abs-center-y left:38% w:31% w:31%@xl svg-asset">
         <span className="rel top:1px">
           <PJRGlyph />
         </span>
@@ -55,6 +55,7 @@ const SocialLink = ({
           "z:1:focus-visible",
           "{bg:color-gray-100;color:color-gray-700}:hover",
           "flex align-items:center justify-content:center",
+          "bg:color-gray-50 bg:transparent@sm",
           className,
         )}
       >
@@ -72,11 +73,11 @@ export const Header = () => {
           <Logo />
 
           <div className="flex gap:6x">
-            <nav className="color:color-gray-500 f:20 flex">
+            <nav className="color:color-gray-500 f:17 f:20@lg flex">
               <ul
                 className={cn(
                   "flex bl:border-b bt:border-b bg:color-gray-0",
-                  `w:${LOGO_WIDTH_MOBILE + 9}px w:${LOGO_WIDTH_MD + 9}px@md`,
+                  `w:${LOGO_WIDTH_MOBILE + 10}px w:${LOGO_WIDTH_LG + 10}px@lg`,
                 )}
               >
                 <SocialLink

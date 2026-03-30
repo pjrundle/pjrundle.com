@@ -1,31 +1,10 @@
-> **ThemeOS is a design system runtime composed of modular packages. It provides a schema-validated token model (design system) which can be consumed across multiple applications. Design config is treated as portable runtime state — allowing updates to propagate without rebuilds. It’s designed to be used as a Single Source of Truth (SSOT) for your design system — define it once and share it across products and codebases.**
+## Introduction
 
-This site is styled with ThemeOS.
+**ThemeOS is a design system runtime composed of modular packages. It provides a schema-validated token model (design system) which can be consumed across multiple applications. Design config is treated as portable runtime state — allowing updates to propagate without rebuilds. It’s designed to be used as a Single Source of Truth (SSOT) for your design system — define it once and share it across products and codebases.**
 
-<ImageCycle
-  images={[
-    {
-      src: "/projects/theme-os/gallery/sample-theme-a.png",
-      alt: "ThemeOS sample theme A",
-    },
-    {
-      src: "/projects/theme-os/gallery/sample-theme-b.png",
-      alt: "ThemeOS sample theme B",
-    },
-    {
-      src: "/projects/theme-os/gallery/sample-theme-c.png",
-      alt: "ThemeOS sample theme C",
-    },
-  ]}
-  caption={
-    <>
-      Live switching as demoed on{" "}
-      <PAccessibleLink href="https://www.theme-os.com/" newTab={true}>
-        theme-os.com
-      </PAccessibleLink>
-    </>
-  }
-/>
+**This site is powered by ThemeOS.**
+
+<ArticleImage src="/projects/theme-os/hero/hero-theme.png" />
 
 ---
 
@@ -36,11 +15,6 @@ ThemeOS did not begin as a standalone project. Its roots go back to my time buil
 Later, when building <Link href="/projects/wombat">Wombat,</Link> that core idea evolved. Wombat required a flexible but controlled theming system — one that could power both user‑produced web content and Wombat's own UI. Over time, that theming architecture became increasingly capable, opinionated, and reusable.
 
 ThemeOS is the result of extracting that architecture into a standalone, boundary-agnostic design‑system runtime.
-
-<ArticleAssetContainer>
-  <div className="typestyle-copy f:0.7em mb:1em">High-Level Architecture</div>
-  <ArchitectureDiagram />
-</ArticleAssetContainer>
 
 ---
 
@@ -64,6 +38,11 @@ These constraints forced architectural clarity. The system needed to be expressi
 ## 3. Architecture & Implementation
 
 ThemeOS is built around a few core architectural decisions, with runtime behavior as a first‑class concern.
+
+<ArticleAssetContainer>
+  <div className="typestyle-copy f:0.7em mb:1em">High-Level Architecture</div>
+  <ArchitectureDiagram />
+</ArticleAssetContainer>
 
 ### Structured Token Schema
 
@@ -202,12 +181,37 @@ const Example = () => (
 Because the design system is runtime state rather than static code, ThemeOS enables workflows that are difficult or impossible with traditional token exports:
 
 - A theme/design system stored centrally and shared across products
-- Real‑time propagation of updates without redeploying applications
-- Optional version‑controlled push‑to‑deploy flows for controlled environments
+- Real‑time propagation of updates
+- Version‑controlled push‑to‑deploy flows for controlled environments
 - The ability to expose a theme editor panel inside local development or staging
 - Designers experimenting directly within the real product, not a mock or parallel playground
 
 This shifts the design system from being a static library to being collaborative, controlled infrastructure.
+
+<ImageCycle
+  images={[
+    {
+      src: "/projects/theme-os/gallery/sample-theme-a.png",
+      alt: "ThemeOS sample theme A",
+    },
+    {
+      src: "/projects/theme-os/gallery/sample-theme-b.png",
+      alt: "ThemeOS sample theme B",
+    },
+    {
+      src: "/projects/theme-os/gallery/sample-theme-c.png",
+      alt: "ThemeOS sample theme C",
+    },
+  ]}
+  caption={
+    <>
+      Live switching as demoed on{" "}
+      <PAccessibleLink href="https://www.theme-os.com/" newTab={true}>
+        theme-os.com
+      </PAccessibleLink>
+    </>
+  }
+/>
 
 ---
 
