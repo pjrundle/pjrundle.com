@@ -49,7 +49,7 @@ export const projectsManifest: TProjectManifestEntry[] = [
     detailPageDescription:
       "Concept, research, design, development and delivery of a set of token-driven design systems and libraries.",
     detailPageHeading: "Design system runtime + component libraries",
-    detailPageHeroImgSrc: "/projects/theme-os/hero/hero-rich-env.png",
+    detailPageHeroImgSrc: "/projects/theme-os/hero/hero-rich-env-dark.png",
     detailPageTitle: "ThemeOS (Creator)",
     // heroAssetComponent: "hero-asset-a.tsx",
     heroImgBgColor: "color-gray-50",
@@ -58,7 +58,7 @@ export const projectsManifest: TProjectManifestEntry[] = [
     name: "ThemeOS",
     ownerLabel: "Creator",
     projectCardHeading: "Design system runtime",
-    projectCardImgSrc: "/projects/theme-os/hero/hero-rich-env.png",
+    projectCardImgSrc: "/projects/theme-os/hero/hero-rich-env-dark.png",
     role: "Creator ・ Design Engineer",
     scope:
       "Token architecture, theming runtime, component library, cross‑product system design",
@@ -84,7 +84,7 @@ export const projectsManifest: TProjectManifestEntry[] = [
     detailPageDescription:
       "Co-Founder, Design and Front-end development for a design system powered content creation tool.",
     detailPageHeading: "Design system powered CMS platform",
-    detailPageHeroImgSrc: "/projects/wmbt/hero/hero-cms.png",
+    detailPageHeroImgSrc: "/projects/wmbt/hero/hero-cms-dark.png",
     detailPageTitle: "Wombat (Co-Founder)",
     heroImgBgColor: "color-gray-100",
     logo: WombatLogo,
@@ -92,7 +92,7 @@ export const projectsManifest: TProjectManifestEntry[] = [
     name: "Wombat",
     ownerLabel: "Co-Founder",
     projectCardHeading: "Design system powered CMS",
-    projectCardImgSrc: "/projects/wmbt/hero/hero-cms.png",
+    projectCardImgSrc: "/projects/wmbt/hero/hero-cms-dark.png",
     role: "Co-Founder ・ Design ・ Front-End",
     scope: "Conception, design, research, development",
     slug: "wombat",
