@@ -1,14 +1,29 @@
-## Introduction
+## The Problem
 
-**ThemeOS is a design system runtime composed of modular packages. It provides a schema-validated token model (design system) which can be consumed across multiple applications. Design config is treated as portable runtime state — allowing updates to propagate without rebuilds. It’s designed to be used as a Single Source of Truth (SSOT) for your design system — define it once and share it across products and codebases.**
+**Design systems are typically static, defined in code, duplicated across projects, and difficult to evolve.
+This leads to inconsistency, slows down development, and makes it hard to maintain a single source of truth across applications.**
 
-**This site is powered by ThemeOS.**
-
-<ArticleImage src="/projects/theme-os/hero/hero-theme.png" />
+**This suggests a different approach: treating design systems as shared, portable data rather than static code.**
 
 ---
 
-## 1. Context
+## Approach
+
+ThemeOS treats design systems as structured, portable data.
+
+At its core is a schema-validated token model that can be shared across applications. This ensures consistency while remaining flexible to evolve.
+
+Instead of duplicating styles per project, design configuration becomes portable state, allowing updates to propagate without rebuilds.
+
+The result is a single source of truth for UI, defined once and applied consistently across products and codebases.
+
+<ArticleImage src="/projects/theme-os/hero/hero-theme.png" />
+
+**This site is powered by ThemeOS.**
+
+---
+
+## Context
 
 ThemeOS did not begin as a standalone project. Its roots go back to my time building systems at <Link href="/projects/brandwatch">Brandwatch,</Link> where strict brand enforcement was required across multiple websites and digital surfaces. The system I built there is still in use today.
 
@@ -18,7 +33,7 @@ ThemeOS is the result of extracting that architecture into a standalone, boundar
 
 ---
 
-## 2. Constraints
+## Constraints
 
 ThemeOS was shaped by real constraints rather than idealized design‑system theory:
 
@@ -35,7 +50,7 @@ These constraints forced architectural clarity. The system needed to be expressi
 
 ---
 
-## 3. Architecture & Implementation
+## Architecture & Implementation
 
 ThemeOS is built around a few core architectural decisions, with runtime behavior as a first‑class concern.
 
@@ -215,7 +230,7 @@ This shifts the design system from being a static library to being collaborative
 
 ---
 
-## 4. Detaching from Wombat
+## Detaching from Wombat
 
 Up until recently, this architecture was simply "the Wombat theming system."
 
@@ -243,7 +258,7 @@ Extracting it clarified the architecture further. What had been an internal subs
 
 ---
 
-## 5. Core Insight
+## Core Insight
 
 The central insight behind ThemeOS is that design systems become significantly more useful when treated as data and runtime state rather than static exports.
 
@@ -260,7 +275,7 @@ ThemeOS is an attempt to make a true design-system SSOT operational, not aspirat
 
 ---
 
-## 6. What’s Next
+## What’s Next?
 
 ThemeOS is already in active use, but the next phase is about pressure-testing and refinement.
 

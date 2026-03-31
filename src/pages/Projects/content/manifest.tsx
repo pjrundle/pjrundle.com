@@ -48,8 +48,8 @@ export const projectsManifest: TProjectManifestEntry[] = [
     },
     categoryLabel: "Platform / Library",
     detailPageDescription:
-      "Concept, research, design, development and delivery of a set of token-driven design systems and libraries.",
-    detailPageHeading: "Design system runtime + component libraries",
+      "Design systems as data/live state — powering consistent UI across applications.",
+    detailPageHeading: "Design system infrastructure + component libraries",
     detailPageHeroImgSrc: "/projects/theme-os/hero/hero-rich-env-dark.png",
     detailPageTitle: "ThemeOS (Creator)",
     // heroAssetComponent: "hero-asset-a.tsx",
@@ -59,12 +59,10 @@ export const projectsManifest: TProjectManifestEntry[] = [
     name: "ThemeOS",
     ownerLabel: "Creator",
     projectCardDescription: "Define and apply design systems as shared data.",
-    // projectCardHeading: "Design system engine",
-    projectCardHeading: "Data-driven design system",
+    projectCardHeading: "Design system infrastructure",
     projectCardImgSrc: "/projects/theme-os/hero/hero-rich-env-dark.png",
     role: "Creator ・ Design Engineer",
-    scope:
-      "Token architecture, theming runtime, component library, cross‑product system design",
+    scope: "Token architecture, theming, and cross-product UI systems",
     slug: "theme-os",
     stats: [
       { label: "Packages", stat: "5.0" },
@@ -75,9 +73,9 @@ export const projectsManifest: TProjectManifestEntry[] = [
     techStack: [
       "React",
       "TypeScript",
+      "Valtio",
       "Arktype",
       "Master CSS",
-      "Valtio",
       "Framer Motion",
     ],
     type: "system",
