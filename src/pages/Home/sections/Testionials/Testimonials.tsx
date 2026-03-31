@@ -56,7 +56,7 @@ export const Testimonials = () => {
         <div className="page-container-lg">
           <Text
             typestyle="display"
-            className="f:16 mb:2x opacity:0.6 hidden block@xl"
+            className="f:16 mb:2x color:color-gray-500 hidden block@xl"
           >
             What colleagues say
           </Text>

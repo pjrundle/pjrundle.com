@@ -13,7 +13,10 @@ export const ExperienceWrapper = ({
       {designOptions.withExperienceTextModule && (
         <div className="page-gutter mb:10x mb:12x@lg">
           <div className="page-container-lg t:center">
-            <Text typestyle="display" className="f:16 mb:2x opacity:0.6">
+            <Text
+              typestyle="display"
+              className="f:16 mb:2x color:color-gray-500"
+            >
               Experience
             </Text>
             <TextModule
