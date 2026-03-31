@@ -8,7 +8,13 @@ export const ProjectCardTextModule = ({
 }: {
   projectEntry: TProjectManifestEntry;
 }) => {
-  const { name, projectCardHeading, categoryLabel, techStack } = projectEntry;
+  const {
+    name,
+    projectCardHeading,
+    projectCardDescription,
+    categoryLabel,
+    techStack,
+  } = projectEntry;
 
   const hasTechStack = techStack && techStack.length > 0;
 

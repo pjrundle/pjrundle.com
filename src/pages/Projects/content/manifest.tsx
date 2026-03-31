@@ -25,6 +25,7 @@ export type TProjectManifestEntry = {
   logoAdjust: number;
   name: string;
   ownerLabel?: string;
+  projectCardDescription?: string;
   projectCardHeading?: string;
   projectCardImgSrc?: string;
   role?: string;
@@ -57,7 +58,9 @@ export const projectsManifest: TProjectManifestEntry[] = [
     logoAdjust: 1,
     name: "ThemeOS",
     ownerLabel: "Creator",
-    projectCardHeading: "Design system runtime",
+    projectCardDescription: "Define and apply design systems as shared data.",
+    // projectCardHeading: "Design system engine",
+    projectCardHeading: "Data-driven design system",
     projectCardImgSrc: "/projects/theme-os/hero/hero-rich-env-dark.png",
     role: "Creator ・ Design Engineer",
     scope:
@@ -172,7 +175,7 @@ export const projectsManifest: TProjectManifestEntry[] = [
       { label: "Active sites", stat: "8+" },
     ],
     techStack: [
-      "JS ES6+",
+      "JS ES6",
       "Tachyons CSS",
       "PHP",
       "MySQL",

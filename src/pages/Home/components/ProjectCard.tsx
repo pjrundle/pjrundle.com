@@ -70,7 +70,7 @@ export const ProjectCard = ({
             "w:100% w:33.33%@lg",
             "rel p:6x@lg",
             "bg:color-gray-50",
-            "bt:border-a br:border-b@md bt:none@md",
+            "bt:border-b br:border-b@md bt:none@lg",
             "flex:1 flex flex-col",
             !designOptions.withProjectCardLogos && "justify-content:center",
           )}
@@ -84,7 +84,7 @@ export const ProjectCard = ({
                 "bb:border-b px:4x py:5x py:15x@lg py:20x@xl mb:6x@lg",
               )}
             >
-              <h2 className="hid">
+              <h2>
                 <span className="sr-only">{name}</span>
                 <span aria-hidden="true">
                   <LogoSvg
@@ -93,7 +93,7 @@ export const ProjectCard = ({
                       `w:${135 * logoAdjust}px@lg`,
                       `w:${160 * logoAdjust}px@xl`,
                       "color:color-gray-950",
-                      size === "product" && "rel@lg top:-5x",
+                      size === "product" && "rel@lg top:-2x",
                       size === "use-case" && "rel@lg top:-2x",
                     )}
                   />
@@ -101,7 +101,7 @@ export const ProjectCard = ({
               </h2>
 
               {project.ownerLabel && (
-                <Badge className="abs@lg bottom:6x left:0 f:8 f:9@sm f:10@xl">
+                <Badge className="abs@lg bottom6x top:0 left:0 f:8 f:9@sm f:10@xl">
                   {project.ownerLabel}
                 </Badge>
               )}

@@ -18,8 +18,8 @@ export const HeroText = ({
     <div {...props} className={className}>
       <h1
         className={cn(
-          "typestyle-display opacity:0.66 leading:1",
-          size === "home" ? "mb:3x f:16" : "mb:3x f:14",
+          "typestyle-display color:color-gray-500 leading:1",
+          size === "home" ? "mb:2.5x mb:3x@sm f:16" : "mb:3x f:14",
         )}
       >
         {overline}
@@ -29,7 +29,7 @@ export const HeroText = ({
           "typestyle-display letter-spacing:-0.025em",
           "text-wrap:balance leading1.35 leading:1.2@sm",
           size === "home"
-            ? "f:30 f:32@sm f:34@md f:37@xl"
+            ? "f:28 f:32@sm f:34@md f:37@xl"
             : "f:26 f:29@lg f:33@xl",
         )}
       >

@@ -16,7 +16,7 @@ export const EnclosedSection = ({
   return (
     <Tag>
       <div className="page-gutter">
-        <div className="page-container-lg bg:color-gray-0@md b:border-b bb:none bb:border-b@sm p:4x p:3.5x@<sm">
+        <div className="page-container-lg bg:color-gray-25 bg:color-gray-0@sm b:border-b bb:none bb:border-b@sm p:4x p:3.5x@<sm">
           <h2 className="typestyle-meta f:9 f:10@md">{title}</h2>
         </div>
       </div>

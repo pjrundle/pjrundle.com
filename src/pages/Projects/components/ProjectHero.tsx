@@ -74,7 +74,7 @@ export const ProjectHero = ({
             <div
               className={cn(
                 "r:radius-default@md rtr0! shadow:shadow-xl@md",
-                "pt:55% pt:55%@sm pt:35%@md rel overflow:hidden",
+                "pt:55% pt:55%@sm pt:47%@xl rel overflow:hidden",
                 `b:1px|solid|${projectEntry.heroImgBorderColor || "color-gray-dark-150"}`,
                 `bg:${projectEntry.heroImgBgColor && !DISABLE_IMAGES ? projectEntry.heroImgBgColor : "color-gray-50"}`,
               )}
