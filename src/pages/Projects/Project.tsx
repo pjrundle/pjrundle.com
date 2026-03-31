@@ -32,7 +32,7 @@ export const ProjectPage = () => {
         <div
           className={cn(
             "page-container-lg",
-            designOptions.withProjectHeroImages && "pt:14x@lg pt:20x@xl",
+            designOptions.withProjectHeroImages && "pt:14x@lg pt:17x@xl",
           )}
         >
           {/* align-items:start needed for sticky */}
