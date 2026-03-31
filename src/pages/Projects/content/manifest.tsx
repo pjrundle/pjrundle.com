@@ -49,7 +49,7 @@ export const projectsManifest: TProjectManifestEntry[] = [
     categoryLabel: "Platform / Library",
     detailPageDescription:
       "Design systems as data/live state — powering consistent UI across applications.",
-    detailPageHeading: "Design system infrastructure + component libraries",
+    detailPageHeading: "Design system infrastructure",
     detailPageHeroImgSrc: "/projects/theme-os/hero/hero-rich-env-dark.png",
     detailPageTitle: "ThemeOS (Creator)",
     // heroAssetComponent: "hero-asset-a.tsx",
@@ -83,8 +83,8 @@ export const projectsManifest: TProjectManifestEntry[] = [
   {
     categoryLabel: "Startup / SaaS",
     detailPageDescription:
-      "Co-Founder, Design and Front-end development for a design system powered content creation tool.",
-    detailPageHeading: "Design system powered CMS platform",
+      "Structured content creation — powered by a design system.",
+    detailPageHeading: "Design system driven CMS platform",
     detailPageHeroImgSrc: "/projects/wmbt/hero/hero-cms-dark.png",
     detailPageTitle: "Wombat (Co-Founder)",
     heroImgBgColor: "color-gray-100",
@@ -92,10 +92,10 @@ export const projectsManifest: TProjectManifestEntry[] = [
     logoAdjust: 0.9,
     name: "Wombat",
     ownerLabel: "Co-Founder",
-    projectCardHeading: "Design system powered CMS",
+    projectCardHeading: "Design system driven CMS",
     projectCardImgSrc: "/projects/wmbt/hero/hero-cms-dark.png",
     role: "Co-Founder ・ Design ・ Front-End",
-    scope: "Conception, design, research, development",
+    scope: "Product design, editor architecture, block system, theming",
     slug: "wombat",
     stats: [
       { label: "Packages", stat: "10+" },
