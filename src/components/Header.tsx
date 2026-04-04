@@ -344,7 +344,7 @@ export const Header = () => {
                               label="Writing"
                               links={[
                                 {
-                                  href: "/labs/theme-os",
+                                  href: "/writing/design-systems-in-code",
                                   label:
                                     "Figma: the right place for design systems?",
                                 },
