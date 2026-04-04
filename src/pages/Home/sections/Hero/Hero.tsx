@@ -53,7 +53,7 @@ export const Hero = () => {
   return (
     <section>
       <div className="page-gutter">
-        <div className="page-container-lg pt:20x pb:21x">
+        <div className="page-container-lg pt:19x pb:22x">
           <div className="grid gap:10x gap:8x@sm grid-cols:2@xl gap:0@xl">
             <HeroText
               overline="Pete Rundle"

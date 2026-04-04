@@ -93,7 +93,7 @@ export const ProjectCard = ({
                       `w:${135 * logoAdjust}px@lg`,
                       `w:${160 * logoAdjust}px@xl`,
                       "color:color-gray-950",
-                      size === "product" && "rel@lg top:-2x",
+                      size === "product" && "rel@lg top-2x top:-5x",
                       size === "use-case" && "rel@lg top:-2x",
                     )}
                   />
@@ -101,7 +101,7 @@ export const ProjectCard = ({
               </h2>
 
               {project.ownerLabel && (
-                <Badge className="abs@lg bottom6x top:0 left:0 f:8 f:9@sm f:10@xl">
+                <Badge className="abs@lg bottom:6x top0 left:0 f:8 f:9@sm f:10@xl">
                   {project.ownerLabel}
                 </Badge>
               )}

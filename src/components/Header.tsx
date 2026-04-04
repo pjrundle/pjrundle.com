@@ -93,6 +93,41 @@ const SocialLink = ({
   );
 };
 
+const MENU_BACKDROP_ENTER_S = 0.2;
+const MENU_PANEL_ENTER_DELAY_S = MENU_BACKDROP_ENTER_S;
+const MENU_PANEL_ENTER_S = 0.25;
+const MENU_PANEL_EXIT_S = 0.2;
+const MENU_BACKDROP_EXIT_DELAY_S = MENU_PANEL_EXIT_S * 0.75;
+
+const menuBackdropVariants = {
+  hidden: {
+    opacity: 0,
+    transition: {
+      duration: MENU_BACKDROP_ENTER_S,
+      delay: MENU_BACKDROP_EXIT_DELAY_S,
+    },
+  },
+  visible: {
+    opacity: 1,
+    transition: { duration: MENU_BACKDROP_ENTER_S, ease: "easeOut" as const },
+  },
+};
+
+const menuPanelVariants = {
+  hidden: {
+    y: "-100%",
+    transition: { duration: MENU_PANEL_EXIT_S, ease: "easeIn" as const },
+  },
+  visible: {
+    y: 0,
+    transition: {
+      duration: MENU_PANEL_ENTER_S,
+      delay: MENU_PANEL_ENTER_DELAY_S,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
 const NavSection = ({
   label,
   links,
@@ -101,8 +136,8 @@ const NavSection = ({
   links: { href: string; label: string }[];
 }) => {
   return (
-    <div className="w:260px">
-      <div className="typestyle-meta f:10 mb:5x">{label}</div>
+    <div className="">
+      <div className="typestyle-meta opacity:0.66 f:10 mb:3x">{label}</div>
       <div className="flex flex-direction:column f:12">
         {links.map((link) => (
           <Link
@@ -124,7 +159,7 @@ export const Header = () => {
   return (
     <>
       <header className="sticky top:0 z:100">
-        <div className="page-gutter rel z:1">
+        <div className="page-gutter rel z:20">
           <div className="page-container-lg bg:color-gray-0 z:100 bb:border-b bx:border-b flex justify-content:space-between">
             <Logo />
 
@@ -133,13 +168,13 @@ export const Header = () => {
                 {/* <div className="flex r:20px b:border-b overflow:hidden">
                 <Link
                   href="/approach"
-                  className="typestyle-meta flex align-items:center px:4x py:2x bxborder-b"
+                  className="typestyle-meta opacity:0.66 flex align-items:center px:4x py:2x bxborder-b"
                 >
                   <span>/ Approach</span>
                 </Link>
                 <Link
                   href="/approach"
-                  className="typestyle-meta flex align-items:center px:4x py:2x"
+                  className="typestyle-meta opacity:0.66 flex align-items:center px:4x py:2x"
                 >
                   <span>/ Process</span>
                 </Link>
@@ -183,70 +218,97 @@ export const Header = () => {
         </div>
 
         <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              key="menu-backdrop"
-              initial={{ opacity: 0, y: "-100%" }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: "-100%" }}
-              transition={{ duration: 0.2 }}
-              className={cn(
-                "abs bottom:-270px left:0 right:0 height:270px bd:blur(30px) bb:border-b shadowshadow-xl",
-              )}
-            >
-              <div className="abs-fill bg:color-gray-0 opacity:0.75" />
+          {isMenuOpen ? (
+            <>
+              <motion.div
+                key="menu-backdrop"
+                role="presentation"
+                variants={menuBackdropVariants}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                className={cn("fixed inset:0 z:10 bdblur(15px)")}
+              >
+                <div className="abs-fill bg:color-gray-0 opacity:0.66" />
+              </motion.div>
 
-              <div className="rel mt:13x">
-                <div className="page-gutter">
-                  <div className="page-container-lg">
-                    <div className="flex gap-x:16x">
-                      <NavSection
-                        label="Products / Systems"
-                        links={[
-                          { href: "/projects/theme-os", label: "ThemeOS" },
-                          { href: "/projects/wombat", label: "Wombat" },
-                        ]}
-                      />
-                      <NavSection
-                        label="Case Studies"
-                        links={[
-                          { href: "/projects/cloud-iq", label: "Cloud.IQ" },
-                          { href: "/projects/brandwatch", label: "Brandwatch" },
-                        ]}
-                      />
-                      <NavSection
-                        label="Writing"
-                        links={[
-                          {
-                            href: "/labs/theme-os",
-                            label: "Figma: the right place for design systems?",
-                          },
-                          {
-                            href: "/labs/wombat",
-                            label: "Designing in code without friction",
-                          },
-                          {
-                            href: "/labs/brandwatch",
-                            label: "No-code - easier than learning tailwind?",
-                          },
-                          {
-                            href: "/labs/brandwatch",
-                            label: "What is a design engineer?",
-                          },
-                        ]}
-                      />
-                      <div className="">
-                        <div className="typestyle-meta f:10 mb:5x">Contact</div>
-                        <div className="typestyle-copy f:12">
-                          hello@pjrundle.com
+              <motion.div
+                key="menu-panel"
+                variants={menuPanelVariants}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                className={cn(
+                  "abs bottom:-270px left:0 right:0 height:270px z:15",
+                  "bbborder-b shadowshadow-xl",
+                )}
+              >
+                {/* <div className="abs-fill bg:black opacity:0.75" /> */}
+
+                <div className="rel">
+                  <div className="page-gutter">
+                    <div className="page-container-lg">
+                      <div className="flex gap-x:24x bx:border-a px:13x pt:13x pb:20x bb:border-a bg:color-gray-0 shadow:shadow-xl">
+                        <div className="grid grid-cols:3">
+                          <NavSection
+                            label="Products / Systems"
+                            links={[
+                              { href: "/projects/theme-os", label: "ThemeOS" },
+                              { href: "/projects/wombat", label: "Wombat" },
+                            ]}
+                          />
+                          <NavSection
+                            label="Case Studies"
+                            links={[
+                              { href: "/projects/cloud-iq", label: "Cloud.IQ" },
+                              {
+                                href: "/projects/brandwatch",
+                                label: "Brandwatch",
+                              },
+                            ]}
+                          />
+                          <NavSection
+                            label="Writing"
+                            links={[
+                              {
+                                href: "/labs/theme-os",
+                                label:
+                                  "Figma: the right place for design systems?",
+                              },
+                              {
+                                href: "/labs/wombat",
+                                label: "Designing in code without friction",
+                              },
+                              {
+                                href: "/labs/brandwatch",
+                                label:
+                                  "No-code - easier than learning tailwind?",
+                              },
+                              {
+                                href: "/labs/brandwatch",
+                                label: "What is a design engineer?",
+                              },
+                            ]}
+                          />
+                        </div>
+                        <div className="bl:3px|solid|color-gray-700 pl:13x">
+                          <div className="typestyle-meta opacity:0.66 f:10 mb:3x">
+                            Contact
+                          </div>
+                          <div className="typestyle-copy f:12">
+                            hello@pjrundle.com
+                          </div>
+                          <div className="typestyle-copy f:12">
+                            linkedin.com/in/pete-rundle/
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          )}
+              </motion.div>
+            </>
+          ) : null}
         </AnimatePresence>
       </header>
     </>
