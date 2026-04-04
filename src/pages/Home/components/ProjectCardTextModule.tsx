@@ -47,7 +47,7 @@ export const ProjectCardTextModule = ({
       <Button
         label={`View ${name}`}
         variant="solid"
-        className="f:11 f:12@md mt:5x mt:6x@xl w:full"
+        className="f:11 f12@md mt:5x mt:6x@xl w:full"
         icon="arrowRight"
         tabIndex={-1}
         aria-hidden

@@ -2,7 +2,6 @@ import { Button, Icon } from "@theme-os/react";
 import { cn } from "@theme-os/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { HiMenu } from "react-icons/hi";
 import { IoLogoGithub } from "react-icons/io";
 import { RiLinkedinFill } from "react-icons/ri";
 import { Link } from "wouter";
@@ -97,7 +96,6 @@ const MENU_BACKDROP_ENTER_S = 0.2;
 const MENU_PANEL_ENTER_DELAY_S = MENU_BACKDROP_ENTER_S;
 const MENU_PANEL_ENTER_S = 0.25;
 const MENU_PANEL_EXIT_S = 0.2;
-const MENU_BACKDROP_EXIT_DELAY_S = MENU_PANEL_EXIT_S * 0.75;
 
 /** Start nav sections after backdrop + panel slide (unchanged open sequence). */
 const MENU_NAV_SECTION_ENTER_AFTER_S =
@@ -105,6 +103,14 @@ const MENU_NAV_SECTION_ENTER_AFTER_S =
 const MENU_NAV_SECTION_STAGGER_S = 0.065;
 const MENU_NAV_SECTION_MOTION_Y = -12;
 const MENU_NAV_SECTION_MOTION_DUR_S = 0.32;
+const MENU_NAV_SECTION_MAX_INDEX = 3;
+/** Time until the last column (index 0) finishes its hide motion. */
+const MENU_NAV_SECTION_EXIT_COMPLETE_S =
+  MENU_NAV_SECTION_MAX_INDEX * MENU_NAV_SECTION_STAGGER_S +
+  MENU_NAV_SECTION_MOTION_DUR_S;
+
+const MENU_BACKDROP_EXIT_DELAY_S =
+  MENU_NAV_SECTION_EXIT_COMPLETE_S + MENU_PANEL_EXIT_S * 0.75;
 
 const menuBackdropVariants = {
   hidden: {
@@ -123,7 +129,11 @@ const menuBackdropVariants = {
 const menuPanelVariants = {
   hidden: {
     y: "-100%",
-    transition: { duration: MENU_PANEL_EXIT_S, ease: "easeIn" as const },
+    transition: {
+      delay: MENU_NAV_SECTION_EXIT_COMPLETE_S,
+      duration: MENU_PANEL_EXIT_S,
+      ease: "easeIn" as const,
+    },
   },
   visible: {
     y: 0,
@@ -144,7 +154,9 @@ const NavSection = ({
 }) => {
   return (
     <div className="">
-      <div className="typestyle-meta opacity:0.66 f:10 mb:3x">{label}</div>
+      <div className="typestylemeta typestyle-display f:16! opacity0.66 f:10 mb:3x">
+        {label}
+      </div>
       <div className="flex flex-direction:column f:12">
         {links.map((link) => (
           <Link
@@ -173,6 +185,17 @@ const MenuNavSectionReveal = ({
     className={className}
     initial={{ opacity: 0, y: MENU_NAV_SECTION_MOTION_Y }}
     animate={{ opacity: 1, y: 0 }}
+    exit={{
+      opacity: 0,
+      y: MENU_NAV_SECTION_MOTION_Y,
+      transition: {
+        duration: MENU_NAV_SECTION_MOTION_DUR_S,
+        delay:
+          (MENU_NAV_SECTION_MAX_INDEX - staggerIndex) *
+          MENU_NAV_SECTION_STAGGER_S,
+        ease: "easeIn",
+      },
+    }}
     transition={{
       duration: MENU_NAV_SECTION_MOTION_DUR_S,
       delay:
@@ -196,7 +219,7 @@ export const Header = () => {
             <Logo />
 
             <div className="flex gap-x:6x">
-              <div className="flex f:12 align-items:center gap-x:3x">
+              <div className="flex f:11 align-items:center gap-x:3x">
                 {/* <div className="flex r:20px b:border-b overflow:hidden">
                 <Link
                   href="/approach"
@@ -217,7 +240,8 @@ export const Header = () => {
 
                 <Button
                   label="Menu"
-                  icon={HiMenu}
+                  // icon={HiMenu}
+                  // icon={HiChevronDown}
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                 />
               </div>
@@ -259,9 +283,15 @@ export const Header = () => {
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
-                className={cn("fixed inset:0 z:10 bdblur(15px)")}
+                className={cn("fixed inset:0 z:10 bdblur(20px)")}
               >
-                <div className="abs-fill bg:color-gray-0 opacity:0.75" />
+                <div
+                  className={cn(
+                    "abs-fill opacity0.4",
+                    "bgblack",
+                    "background-image:linear-gradient(to|bottom,rgba(0,0,0,1),rgba(0,0,0,0))",
+                  )}
+                />
               </motion.div>
 
               <motion.div
@@ -280,7 +310,7 @@ export const Header = () => {
                 <div className="rel">
                   <div className="page-gutter">
                     <div className="page-container-lg">
-                      <div className="flex gap-x:24x bx:border-a px:13x pt:13x pb:20x bb:border-a bg:color-gray-0 shadow:shadow-xl">
+                      <div className="flex gap-x:24x bx:border-a bb:border-a bb:6px|solid|color-gray-100! px:13x pt:13x pb:20x bg:color-gray-0 shadow:shadow-xl">
                         <div className="grid grid-cols:3">
                           <MenuNavSectionReveal staggerIndex={0}>
                             <NavSection
@@ -338,8 +368,11 @@ export const Header = () => {
 
                         <MenuNavSectionReveal
                           staggerIndex={3}
-                          className="bl:3px|solid|color-gray-700 pl:13x"
+                          className="bl3px|solid|color-gray-700 pl:13x"
                         >
+                          {/* <div className="typestyle-display f:16 mb:3x">
+                            Get in touch
+                          </div> */}
                           <NavSection
                             label="Contact"
                             links={[

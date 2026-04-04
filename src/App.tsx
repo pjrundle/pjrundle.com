@@ -12,7 +12,7 @@ import { Labs } from "./pages/Labs/Labs.tsx";
 import { ProjectPage } from "./pages/Projects/Project.tsx";
 
 // Design: Sometimes useful to disable images to focus on layout/spacing more easily
-export const DISABLE_IMAGES = false;
+export const DISABLE_IMAGES = true;
 
 // Prevent browser from restoring scroll position on refresh
 if ("scrollRestoration" in history) {

@@ -19,7 +19,7 @@ export const HeroText = ({
       <h1
         className={cn(
           "typestyle-display color:color-gray-500 leading:1",
-          size === "home" ? "mb:2.5x mb:3x@sm f:16" : "mb:3x f:14",
+          size === "home" ? "mb:2.5x mb3x@sm f:16" : "mb:2.5x f:14",
         )}
       >
         {overline}

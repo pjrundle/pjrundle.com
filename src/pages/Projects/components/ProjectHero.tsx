@@ -61,7 +61,7 @@ export const ProjectHero = ({
                     className={cn(
                       "abs-center",
                       `w:${140 * projectEntry.logoAdjust}px`,
-                      `w:${170 * projectEntry.logoAdjust}px@xl`,
+                      `w:${160 * projectEntry.logoAdjust}px@xl`,
                       "color:color-gray-950",
                     )}
                   />

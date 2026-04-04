@@ -147,7 +147,7 @@ export const ProjectAside = ({
         </div>
 
         {projectEntry.button && (
-          <div className="f:12 hidden flex@lg mt:5x">
+          <div className="f:11 hidden flex@lg mt:5x">
             <MicrositeButton projectEntry={projectEntry} className="w:full" />
           </div>
         )}
