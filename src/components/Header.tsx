@@ -99,6 +99,13 @@ const MENU_PANEL_ENTER_S = 0.25;
 const MENU_PANEL_EXIT_S = 0.2;
 const MENU_BACKDROP_EXIT_DELAY_S = MENU_PANEL_EXIT_S * 0.75;
 
+/** Start nav sections after backdrop + panel slide (unchanged open sequence). */
+const MENU_NAV_SECTION_ENTER_AFTER_S =
+  MENU_PANEL_ENTER_DELAY_S + MENU_PANEL_ENTER_S;
+const MENU_NAV_SECTION_STAGGER_S = 0.065;
+const MENU_NAV_SECTION_MOTION_Y = -12;
+const MENU_NAV_SECTION_MOTION_DUR_S = 0.32;
+
 const menuBackdropVariants = {
   hidden: {
     opacity: 0,
@@ -152,6 +159,31 @@ const NavSection = ({
     </div>
   );
 };
+
+const MenuNavSectionReveal = ({
+  staggerIndex,
+  className,
+  children,
+}: {
+  staggerIndex: number;
+  className?: string;
+  children: React.ReactNode;
+}) => (
+  <motion.div
+    className={className}
+    initial={{ opacity: 0, y: MENU_NAV_SECTION_MOTION_Y }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{
+      duration: MENU_NAV_SECTION_MOTION_DUR_S,
+      delay:
+        MENU_NAV_SECTION_ENTER_AFTER_S +
+        staggerIndex * MENU_NAV_SECTION_STAGGER_S,
+      ease: "easeOut",
+    }}
+  >
+    {children}
+  </motion.div>
+);
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -229,7 +261,7 @@ export const Header = () => {
                 exit="hidden"
                 className={cn("fixed inset:0 z:10 bdblur(15px)")}
               >
-                <div className="abs-fill bg:color-gray-0 opacity:0.66" />
+                <div className="abs-fill bg:color-gray-0 opacity:0.75" />
               </motion.div>
 
               <motion.div
@@ -250,58 +282,78 @@ export const Header = () => {
                     <div className="page-container-lg">
                       <div className="flex gap-x:24x bx:border-a px:13x pt:13x pb:20x bb:border-a bg:color-gray-0 shadow:shadow-xl">
                         <div className="grid grid-cols:3">
-                          <NavSection
-                            label="Products / Systems"
-                            links={[
-                              { href: "/projects/theme-os", label: "ThemeOS" },
-                              { href: "/projects/wombat", label: "Wombat" },
-                            ]}
-                          />
-                          <NavSection
-                            label="Case Studies"
-                            links={[
-                              { href: "/projects/cloud-iq", label: "Cloud.IQ" },
-                              {
-                                href: "/projects/brandwatch",
-                                label: "Brandwatch",
-                              },
-                            ]}
-                          />
-                          <NavSection
-                            label="Writing"
-                            links={[
-                              {
-                                href: "/labs/theme-os",
-                                label:
-                                  "Figma: the right place for design systems?",
-                              },
-                              {
-                                href: "/labs/wombat",
-                                label: "Designing in code without friction",
-                              },
-                              {
-                                href: "/labs/brandwatch",
-                                label:
-                                  "No-code - easier than learning tailwind?",
-                              },
-                              {
-                                href: "/labs/brandwatch",
-                                label: "What is a design engineer?",
-                              },
-                            ]}
-                          />
+                          <MenuNavSectionReveal staggerIndex={0}>
+                            <NavSection
+                              label="Products / Systems"
+                              links={[
+                                {
+                                  href: "/projects/theme-os",
+                                  label: "ThemeOS",
+                                },
+                                { href: "/projects/wombat", label: "Wombat" },
+                              ]}
+                            />
+                          </MenuNavSectionReveal>
+                          <MenuNavSectionReveal staggerIndex={1}>
+                            <NavSection
+                              label="Case Studies"
+                              links={[
+                                {
+                                  href: "/projects/cloud-iq",
+                                  label: "Cloud.IQ",
+                                },
+                                {
+                                  href: "/projects/brandwatch",
+                                  label: "Brandwatch",
+                                },
+                              ]}
+                            />
+                          </MenuNavSectionReveal>
+                          <MenuNavSectionReveal staggerIndex={2}>
+                            <NavSection
+                              label="Writing"
+                              links={[
+                                {
+                                  href: "/labs/theme-os",
+                                  label:
+                                    "Figma: the right place for design systems?",
+                                },
+                                {
+                                  href: "/labs/wombat",
+                                  label: "Designing in code without friction",
+                                },
+                                {
+                                  href: "/labs/brandwatch",
+                                  label:
+                                    "No-code - easier than learning tailwind?",
+                                },
+                                {
+                                  href: "/labs/brandwatch",
+                                  label: "What is a design engineer?",
+                                },
+                              ]}
+                            />
+                          </MenuNavSectionReveal>
                         </div>
-                        <div className="bl:3px|solid|color-gray-700 pl:13x">
-                          <div className="typestyle-meta opacity:0.66 f:10 mb:3x">
-                            Contact
-                          </div>
-                          <div className="typestyle-copy f:12">
-                            hello@pjrundle.com
-                          </div>
-                          <div className="typestyle-copy f:12">
-                            linkedin.com/in/pete-rundle/
-                          </div>
-                        </div>
+
+                        <MenuNavSectionReveal
+                          staggerIndex={3}
+                          className="bl:3px|solid|color-gray-700 pl:13x"
+                        >
+                          <NavSection
+                            label="Contact"
+                            links={[
+                              {
+                                href: "mailto:hello@pjrundle.com",
+                                label: "hello@pjrundle.com",
+                              },
+                              {
+                                href: "https://linkedin.com/in/pete-rundle/",
+                                label: "LinkedIn",
+                              },
+                            ]}
+                          />
+                        </MenuNavSectionReveal>
                       </div>
                     </div>
                   </div>
