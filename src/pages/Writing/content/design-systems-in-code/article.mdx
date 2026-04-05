@@ -1,0 +1,88 @@
+## Is Figma the right place for design systems?
+
+Design systems are often treated as something that lives in Figma.
+
+That feels natural. Figma is where design happens — it’s where components are created, layouts are explored, and visual decisions are made. So it makes sense that the system would live there too.
+
+I don’t think that’s quite right.
+
+---
+
+### Figma is excellent for exploration
+
+Figma is one of the best tools we have for visual thinking.
+
+It’s fast, flexible, and collaborative. You can quickly explore directions, test layouts, and communicate ideas. It lowers the cost of iteration in a way that’s hard to match elsewhere.
+
+For that, it’s hard to beat.
+
+---
+
+### But systems need to be enforceable
+
+A design system isn’t just a collection of components or styles. It’s a set of rules that should be applied consistently across real products.
+
+That’s where Figma starts to struggle.
+
+At small scales, it works well enough. But as systems grow:
+
+- tokens get duplicated or drift
+- components diverge from implementation
+- overrides and variants become difficult to reason about
+- the gap between design and production increases
+
+Figma doesn’t enforce the system — it documents it.
+
+---
+
+### Code is where systems actually live
+
+In practice, design systems are realised in code.
+
+That’s where tokens are applied, components are used, and constraints are enforced. It’s the only place where consistency is guaranteed, because it’s the layer that actually renders the product.
+
+Code isn’t just implementation — it’s the system in its most concrete form.
+
+---
+
+### We’ve inverted the relationship
+
+The common workflow today is:
+
+> define system in Figma → attempt to replicate it in code
+
+This creates duplication by default. Two sources of truth, drifting over time.
+
+A more natural model is:
+
+> define system in code → use it everywhere else
+
+In this setup, Figma becomes a consumer of the system, not its owner. Tokens, components, and styles can be pulled into Figma for exploration, but the underlying definition lives in one place.
+
+---
+
+### Figma still matters
+
+This isn’t about replacing Figma.
+
+Figma is still the best tool for:
+
+- early-stage exploration
+- visual iteration
+- communicating intent
+
+But it’s not where systems are best maintained long-term.
+
+---
+
+### A shift in thinking
+
+The idea that design systems should live in design tools is understandable — but it leads to duplication, drift, and friction.
+
+If we treat systems as something defined in code — and use tools like Figma to explore and apply them — the relationship becomes much simpler.
+
+One source of truth. Fewer translations. Less drift.
+
+---
+
+This is the direction I find most compelling.

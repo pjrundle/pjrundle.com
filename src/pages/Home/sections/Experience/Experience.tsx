@@ -4,21 +4,23 @@ import { ExperienceWrapper } from "./ExperienceWrapper.tsx";
 
 export const Experience = () => {
   return (
-    <ExperienceWrapper>
-      <div className="grid grid-cols:1 grid-cols:2@lg gap:6x">
-        {projectsManifest
-          .filter(
-            (project) =>
-              project.type !== "product" && project.type !== "system",
-          )
-          .map((project, i) => (
-            <ProjectCardMini
-              key={project.slug}
-              project={project}
-              imageLoading={i === 0 ? "eager" : "lazy"}
-            />
-          ))}
-      </div>
-    </ExperienceWrapper>
+    <div className="bg:color-gray-25 py:20x">
+      <ExperienceWrapper>
+        <div className="grid grid-cols:1 grid-cols:2@lg gap:6x">
+          {projectsManifest
+            .filter(
+              (project) =>
+                project.type !== "product" && project.type !== "system",
+            )
+            .map((project, i) => (
+              <ProjectCardMini
+                key={project.slug}
+                project={project}
+                imageLoading={i === 0 ? "eager" : "lazy"}
+              />
+            ))}
+        </div>
+      </ExperienceWrapper>
+    </div>
   );
 };

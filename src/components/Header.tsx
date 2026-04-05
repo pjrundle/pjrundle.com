@@ -1,4 +1,4 @@
-import { Button, Icon } from "@theme-os/react";
+import { Icon } from "@theme-os/react";
 import { useOnClickOutside } from "@theme-os/react-primitives";
 import { cn } from "@theme-os/utils";
 import { AnimatePresence, motion } from "framer-motion";
@@ -13,30 +13,30 @@ import { useAppUi, useCloseMenu } from "../context/AppUiContext.tsx";
 const LOGO_WIDTH_MOBILE = 60;
 const LOGO_WIDTH_LG = 70;
 
-// const MenuIcon = ({ onClick }: { onClick: () => void }) => {
-//   return (
-//     <button
-//       aria-label="Menu"
-//       className={cn(
-//         `w:${LOGO_WIDTH_MOBILE}px w:${LOGO_WIDTH_LG - 10}px@lg`,
-//         "inline-block rel",
-//         "bg:color-gray-50 color:color-gray-900",
-//         "bg:color-gray-100:hover",
-//         "bl:border-b bt:border-b",
-//         "cursor:pointer",
-//       )}
-//       onClick={onClick}
-//     >
-//       <span className="aspect:1/1 block" />
+const MenuIcon = ({ onClick }: { onClick: () => void }) => {
+  return (
+    <button
+      aria-label="Menu"
+      className={cn(
+        `w:${LOGO_WIDTH_MOBILE}px w:${LOGO_WIDTH_LG - 10}px@lg`,
+        "inline-block rel",
+        "bg:color-gray-50 color:color-gray-900",
+        "bg:color-gray-100:hover",
+        "bl:border-b bt:border-b",
+        "cursor:pointer",
+      )}
+      onClick={onClick}
+    >
+      <span className="aspect:1/1 block" />
 
-//       <div className="abs-center w:32.5% flex flex-col gap-y:5px">
-//         <span className="block w:100% h:1px bg:color-gray-700" />
-//         <span className="block w:100% h:1px bg:color-gray-700" />
-//         <span className="block w:100% h:1px bg:color-gray-700" />
-//       </div>
-//     </button>
-//   );
-// };
+      <div className="abs-center w:32.5% flex flex-col gap-y:5px">
+        <span className="block w:100% h:1px bg:color-gray-700" />
+        <span className="block w:100% h:1px bg:color-gray-700" />
+        <span className="block w:100% h:1px bg:color-gray-700" />
+      </div>
+    </button>
+  );
+};
 
 const NavLink = ({ href, label }: { href: string; label: string }) => {
   const closeMenu = useCloseMenu();
@@ -57,7 +57,7 @@ const Logo = () => {
         "inline-block rel",
         "bg:color-gray-50 color:color-gray-900",
         "bg:color-gray-100:hover",
-        "brborder-b bt:border-b",
+        "br:border-b btborder-b",
       )}
     >
       <span className="aspect:1/1 block" />
@@ -166,10 +166,11 @@ const NavSection = ({
   return (
     <div className="">
       <div
-        className={cn(
-          "typestyle-display f:16! opacity0.66 f:10 mb:3x",
-          !label && "opacity:0",
-        )}
+        className={cn("typestyle-display f:16! mb:3x", !label && "opacity:0")}
+        // className={cn(
+        //   "typestyle-meta opacity:0.66 f:10 mb:3x",
+        //   !label && "opacity:0!",
+        // )}
       >
         {label || "Section"}
       </div>
@@ -224,7 +225,7 @@ const MenuNavSectionReveal = ({
 
 export const Header = () => {
   const menuPanelRef = useRef<HTMLDivElement>(null);
-  const triggerRef = useRef<HTMLButtonElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
   const { isMenuOpen, setIsMenuOpen } = useAppUi();
   useOnClickOutside({
     ref: menuPanelRef,
@@ -242,54 +243,75 @@ export const Header = () => {
             <div className="flex gap-x:6x">
               <div className="flex f:11 align-items:center gap-x:3x">
                 {/* <div className="flex r:20px b:border-b overflow:hidden">
-                <Link
-                  href="/approach"
-                  className="typestyle-meta opacity:0.66 flex align-items:center px:4x py:2x bxborder-b"
-                >
-                  <span>/ Approach</span>
-                </Link>
-                <Link
-                  href="/approach"
-                  className="typestyle-meta opacity:0.66 flex align-items:center px:4x py:2x"
-                >
-                  <span>/ Process</span>
-                </Link>
-              </div> */}
+                  <Link
+                    href="/approach"
+                    className="typestyle-meta opacity:0.66 flex align-items:center px:4x py:2x bxborder-b"
+                  >
+                    <span>/ Approach</span>
+                  </Link>
+                  <Link
+                    href="/approach"
+                    className="typestyle-meta opacity:0.66 flex align-items:center px:4x py:2x"
+                  >
+                    <span>/ Process</span>
+                  </Link>
+                </div> */}
 
                 {/* <Badge>Approach</Badge>
-              <Badge>Process</Badge> */}
+                <Badge>Process</Badge> */}
 
-                <Button
-                  label="Menu"
-                  // icon={HiMenu}
-                  // icon={HiChevronDown}
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  ref={triggerRef}
-                />
+                {/* <Link
+                  href="/writing"
+                  className="typestyle-copy opacity:0.66 f:13 flex align-items:center px:4x py:2x"
+                >
+                  Articles
+                </Link> */}
+
+                {/* <div className="grid grid-cols:2 color:color-gray-300 f:20 mr:-4x bl:border-a">
+                  <Icon icon={RiLinkedinFill} className="p:2x" />
+                  <Icon icon={IoLogoGithub} className="p:2x" />
+                  <Icon icon={HiPencil} className="p:2x" />
+                  <Icon icon={RiInstagramFill} className="p:2x" />
+                </div> */}
               </div>
 
-              <nav className="color:color-gray-500 f:17 f:19@lg flex">
+              <nav className="color:color-gray-500 f:17 f:18@lg flex">
                 <ul
                   className={cn(
-                    "hidden!",
-                    "flex blborder-b btborder-b bg:color-gray-0 mr:1.5x",
-                    `w:${LOGO_WIDTH_MOBILE + 10}px w:${LOGO_WIDTH_LG + 10}px@lg`,
+                    "hiddn!",
+                    "flex bl:border-b bt:border-b bg:color-gray-0 mr1.5x",
+                    `w${LOGO_WIDTH_MOBILE + 10}px w${LOGO_WIDTH_LG + 10}px@lg`,
                   )}
                 >
+                  {/* <SocialLink
+                    icon={HiPencil}
+                    href="#0"
+                    label="View Linkedin profile"
+                  /> */}
                   <SocialLink
                     icon={RiLinkedinFill}
                     href="https://www.linkedin.com/in/pete-rundle/"
                     label="View Linkedin profile"
+                    // className="bl:border-b"
                   />
                   <SocialLink
                     icon={IoLogoGithub}
-                    className="blborder-b pr:6x!"
+                    className="bl:border-b"
                     href="https://github.com/pjrundle"
                     label="View GitHub profile"
                   />
                 </ul>
 
-                {/* <MenuIcon onClick={() => setIsMenuOpen(!isMenuOpen)} /> */}
+                <div className="flex" ref={triggerRef}>
+                  {/* <div className="flex align-items:center pr:6x">
+                    <Button
+                      label="Menu"
+                      className="f:11"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    />
+                  </div> */}
+                  <MenuIcon onClick={() => setIsMenuOpen(!isMenuOpen)} />
+                </div>
               </nav>
             </div>
           </div>
@@ -337,7 +359,7 @@ export const Header = () => {
                         <div className="grid grid-cols:3 gap-x10x w:66.66% pr:16x deug">
                           <MenuNavSectionReveal
                             staggerIndex={0}
-                            className="br:border-b"
+                            // className="br:border-b"
                           >
                             <NavSection
                               label="Work"
@@ -352,7 +374,7 @@ export const Header = () => {
                           </MenuNavSectionReveal>
                           <MenuNavSectionReveal
                             staggerIndex={1}
-                            className="br:border-b"
+                            // className="br:border-b"
                           >
                             <NavSection
                               // label="Case Studies"
@@ -370,7 +392,7 @@ export const Header = () => {
                           </MenuNavSectionReveal>
                           <MenuNavSectionReveal
                             staggerIndex={2}
-                            className="br:border-b"
+                            // className="br:border-b"
                           >
                             <NavSection
                               label="Writing"

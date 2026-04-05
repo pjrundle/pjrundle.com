@@ -110,7 +110,7 @@ export const ProjectAside = ({
   return (
     <aside
       className={cn(
-        "sticky@lg top:74px",
+        "sticky@lg top:69px",
         "flex flex-col flex:1 gap-y:6x",
         "bx:border-b bl:none@lg bb:border-b pb:4x pb:5x@lg",
       )}

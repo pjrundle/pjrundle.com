@@ -2,6 +2,7 @@ import { useParams } from "wouter";
 
 import { HeroText } from "../../components/HeroText.tsx";
 import { Page404 } from "../404/404.tsx";
+import { WritingArticle } from "./components/WritingArticle.tsx";
 import { writingManifestBySlug } from "./content/manifest.tsx";
 
 /*
@@ -21,11 +22,10 @@ export const WritingPage = () => {
     <article>
       <div className="page-gutter">
         <div className="page-container-lg pt:14x pb:8x">
-          <HeroText overline="Writing" heading={entry.title} size="project" />
-          <p className="typestyle-copy f:12 f:14@xl mt:6x">
-            This article route is wired up — replace this line with real content
-            when you are ready.
-          </p>
+          <div className="mb:10x max-w:620px mx:auto">
+            <HeroText heading={entry.title} size="project" />
+          </div>
+          <WritingArticle slug={slug} />
         </div>
       </div>
     </article>

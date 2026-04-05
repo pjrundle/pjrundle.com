@@ -5,11 +5,10 @@ import { Link } from "wouter";
 
 import { Mdx } from "../../../components/Mdx.tsx";
 import { designOptions } from "../../../design-system/design-system.ts";
-import { ArticleAssetContainer } from "./ArticleAssetContainer.tsx";
-import { ArticleErrorBoundary } from "./ArticleErrorBoundary.tsx";
-import { ArticleImage } from "./ArticleImage.tsx";
-import { ArticleLoadingIndicator } from "./ArticleLoadingIndicator.tsx";
-import { ProjectMiniHeading } from "./ProjectMiniHeading.tsx";
+import { ArticleAssetContainer } from "../../Projects/components/ArticleAssetContainer.tsx";
+import { ArticleErrorBoundary } from "../../Projects/components/ArticleErrorBoundary.tsx";
+import { ArticleImage } from "../../Projects/components/ArticleImage.tsx";
+import { ArticleLoadingIndicator } from "../../Projects/components/ArticleLoadingIndicator.tsx";
 
 // Modules
 // ---------------------------------------------------------------
@@ -25,7 +24,7 @@ const articleComponentModules = import.meta.glob<{
 // Article
 // ---------------------------------------------------------------
 
-const ArticleSection = ({ slug }: { slug: string }) => {
+const WritingArticleSection = ({ slug }: { slug: string }) => {
   const mdxPath = `../content/${slug}/article.mdx`;
   const compPath = `../content/${slug}/article-components.tsx`;
 
@@ -81,30 +80,11 @@ const ArticleSection = ({ slug }: { slug: string }) => {
   );
 };
 
-export const ProjectArticle = ({ slug }: { slug: string }) => {
+export const WritingArticle = ({ slug }: { slug: string }) => {
   return (
-    <div
-      className={cn(
-        "w:full w:66.66%@lg f:12",
-        "bx:border-b@lg bb:border-b@lg pb:10x pb:30x@lg",
-      )}
-    >
-      <ProjectMiniHeading
-        className={cn(
-          "hidden block@lg",
-          "sticky@lg top:69px@lg z:2@lg",
-          "mb:10x mb:16x@lg",
-          "bx:border-b bx:none@lg",
-          designOptions.centeredArticle &&
-            designOptions.withFullWidthSynopsis &&
-            "max-w:620px mx:auto",
-        )}
-      >
-        Synopsis
-      </ProjectMiniHeading>
-
+    <div className={cn("w:full f:12", "pb:10x pb:30x@lg", "mt:6x")}>
       <ArticleErrorBoundary key={slug}>
-        <ArticleSection slug={slug} />
+        <WritingArticleSection slug={slug} />
       </ArticleErrorBoundary>
     </div>
   );

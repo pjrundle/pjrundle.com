@@ -53,7 +53,7 @@ export const Hero = () => {
   return (
     <section>
       <div className="page-gutter">
-        <div className="page-container-lg pt:19x pb:22x">
+        <div className="page-container-lg pt:19x pt:19.5x@2xl pb:22x">
           <div className="grid gap:10x gap:8x@sm grid-cols:2@xl gap:0@xl">
             <HeroText
               overline="Pete Rundle"
@@ -82,7 +82,7 @@ export const Hero = () => {
                     </p>
                   }
                 />
-                <p className="typestyle-meta bt:border-b@sm mt:4x@sm pt:4x leading:1.4 f:10 flex gap-x:1.5x align-items:center opacity:0.66@<sm">
+                <p className="typestyle-meta btborder-b@sm mt:4x@sm pt4x leading:1.4 f:10 flex gap-x:1.5x align-items:center opacity:0.66@<sm">
                   <span className="color:color-gray-700">Available for:</span>{" "}
                   <span>senior roles, contract, advisory</span>
                 </p>

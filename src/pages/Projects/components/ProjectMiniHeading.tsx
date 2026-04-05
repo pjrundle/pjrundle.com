@@ -10,8 +10,8 @@ export const ProjectMiniHeading = ({
   return (
     <h3
       className={cn(
-        "typestyle-meta f:10 bg:color-gray-25 bg:color-gray-25@lg",
-        "mb:5x by:border-b py:3x px:3.5x",
+        "typestyle-meta f:10 bg:color-gray-25 bg:color-gray-0@lg",
+        "mb:5x by:border-b py:3.5x px:3.5x",
         className,
       )}
     >

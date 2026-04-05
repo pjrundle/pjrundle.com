@@ -8,7 +8,7 @@ export const HeroText = ({
   className,
   ...props
 }: {
-  overline: string;
+  overline?: string;
   heading: React.ReactNode;
   meta?: React.ReactNode;
   size?: "home" | "project";
@@ -16,14 +16,16 @@ export const HeroText = ({
 }) => {
   return (
     <div {...props} className={className}>
-      <h1
-        className={cn(
-          "typestyle-display color:color-gray-500 leading:1",
-          size === "home" ? "mb:2.5x mb3x@sm f:16" : "mb:2.5x f:14",
-        )}
-      >
-        {overline}
-      </h1>
+      {overline && (
+        <h1
+          className={cn(
+            "typestyle-display color:color-gray-500 leading:1",
+            size === "home" ? "mb:2.5x mb3x@sm f:16" : "mb:2.5x f:14",
+          )}
+        >
+          {overline}
+        </h1>
+      )}
       <p
         className={cn(
           "typestyle-display letter-spacing:-0.025em",
