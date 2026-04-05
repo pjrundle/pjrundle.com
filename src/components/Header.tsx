@@ -1,38 +1,49 @@
 import { Button, Icon } from "@theme-os/react";
+import { useOnClickOutside } from "@theme-os/react-primitives";
 import { cn } from "@theme-os/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useRef } from "react";
 import { IoLogoGithub } from "react-icons/io";
 import { RiLinkedinFill } from "react-icons/ri";
 import { Link } from "wouter";
 
 import { PJRGlyph } from "../assets/PJRGlyph.tsx";
+import { useAppUi, useCloseMenu } from "../context/AppUiContext.tsx";
 
 const LOGO_WIDTH_MOBILE = 60;
-const LOGO_WIDTH_LG = 74;
+const LOGO_WIDTH_LG = 70;
 
-const MenuIcon = ({ onClick }: { onClick: () => void }) => {
+// const MenuIcon = ({ onClick }: { onClick: () => void }) => {
+//   return (
+//     <button
+//       aria-label="Menu"
+//       className={cn(
+//         `w:${LOGO_WIDTH_MOBILE}px w:${LOGO_WIDTH_LG - 10}px@lg`,
+//         "inline-block rel",
+//         "bg:color-gray-50 color:color-gray-900",
+//         "bg:color-gray-100:hover",
+//         "bl:border-b bt:border-b",
+//         "cursor:pointer",
+//       )}
+//       onClick={onClick}
+//     >
+//       <span className="aspect:1/1 block" />
+
+//       <div className="abs-center w:32.5% flex flex-col gap-y:5px">
+//         <span className="block w:100% h:1px bg:color-gray-700" />
+//         <span className="block w:100% h:1px bg:color-gray-700" />
+//         <span className="block w:100% h:1px bg:color-gray-700" />
+//       </div>
+//     </button>
+//   );
+// };
+
+const NavLink = ({ href, label }: { href: string; label: string }) => {
+  const closeMenu = useCloseMenu();
   return (
-    <button
-      aria-label="Menu"
-      className={cn(
-        `w:${LOGO_WIDTH_MOBILE}px w:${LOGO_WIDTH_LG - 10}px@lg`,
-        "inline-block rel",
-        "bg:color-gray-50 color:color-gray-900",
-        "bg:color-gray-100:hover",
-        "bl:border-b bt:border-b",
-        "cursor:pointer",
-      )}
-      onClick={onClick}
-    >
-      <span className="aspect:1/1 block" />
-
-      <div className="abs-center w:32.5% flex flex-col gap-y:5px">
-        <span className="block w:100% h:1px bg:color-gray-700" />
-        <span className="block w:100% h:1px bg:color-gray-700" />
-        <span className="block w:100% h:1px bg:color-gray-700" />
-      </div>
-    </button>
+    <Link href={href} className="typestyle-copy pb:1x" onClick={closeMenu}>
+      {label}
+    </Link>
   );
 };
 
@@ -46,12 +57,12 @@ const Logo = () => {
         "inline-block rel",
         "bg:color-gray-50 color:color-gray-900",
         "bg:color-gray-100:hover",
-        "br:border-b bt:border-b",
+        "brborder-b bt:border-b",
       )}
     >
       <span className="aspect:1/1 block" />
       <span className="abs-center-y left:38% w:31% w:31%@xl svg-asset">
-        <span className="rel top:1px">
+        <span className="rel">
           <PJRGlyph />
         </span>
       </span>
@@ -128,7 +139,7 @@ const menuBackdropVariants = {
 
 const menuPanelVariants = {
   hidden: {
-    y: "-100%",
+    y: "-150%",
     transition: {
       delay: MENU_NAV_SECTION_EXIT_COMPLETE_S,
       duration: MENU_PANEL_EXIT_S,
@@ -149,23 +160,26 @@ const NavSection = ({
   label,
   links,
 }: {
-  label: string;
+  label?: string;
   links: { href: string; label: string }[];
 }) => {
   return (
     <div className="">
-      <div className="typestylemeta typestyle-display f:16! opacity0.66 f:10 mb:3x">
-        {label}
+      <div
+        className={cn(
+          "typestyle-display f:16! opacity0.66 f:10 mb:3x",
+          !label && "opacity:0",
+        )}
+      >
+        {label || "Section"}
       </div>
       <div className="flex flex-direction:column f:12">
         {links.map((link) => (
-          <Link
-            key={link.href}
-            className="typestyle-copy pb:1x"
+          <NavLink
+            key={`${link.href}-${link.label}`}
             href={link.href}
-          >
-            {link.label}
-          </Link>
+            label={link.label}
+          />
         ))}
       </div>
     </div>
@@ -209,7 +223,14 @@ const MenuNavSectionReveal = ({
 );
 
 export const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuPanelRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const { isMenuOpen, setIsMenuOpen } = useAppUi();
+  useOnClickOutside({
+    ref: menuPanelRef,
+    triggerRef,
+    handler: () => setIsMenuOpen(false),
+  });
 
   return (
     <>
@@ -243,6 +264,7 @@ export const Header = () => {
                   // icon={HiMenu}
                   // icon={HiChevronDown}
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  ref={triggerRef}
                 />
               </div>
 
@@ -289,12 +311,13 @@ export const Header = () => {
                   className={cn(
                     "abs-fill opacity0.4",
                     "bgblack",
-                    "background-image:linear-gradient(to|bottom,rgba(0,0,0,1),rgba(0,0,0,0))",
+                    "background-image:linear-gradient(to|bottom,color-gray-0,rgba(0,0,0,0))",
                   )}
                 />
               </motion.div>
 
               <motion.div
+                ref={menuPanelRef}
                 key="menu-panel"
                 variants={menuPanelVariants}
                 initial="hidden"
@@ -310,11 +333,14 @@ export const Header = () => {
                 <div className="rel">
                   <div className="page-gutter">
                     <div className="page-container-lg">
-                      <div className="flex gap-x:24x bx:border-a bb:border-a bb:6px|solid|color-gray-100! px:13x pt:13x pb:20x bg:color-gray-0 shadow:shadow-xl">
-                        <div className="grid grid-cols:3">
-                          <MenuNavSectionReveal staggerIndex={0}>
+                      <div className="flex bx:border-a bb:border-a bb:6px|solid|color-gray-100! pt:8x pb:11x bg:color-gray-0 shadow:shadow-xl px:8x">
+                        <div className="grid grid-cols:3 gap-x10x w:66.66% pr:16x deug">
+                          <MenuNavSectionReveal
+                            staggerIndex={0}
+                            className="br:border-b"
+                          >
                             <NavSection
-                              label="Products / Systems"
+                              label="Work"
                               links={[
                                 {
                                   href: "/projects/theme-os",
@@ -324,9 +350,12 @@ export const Header = () => {
                               ]}
                             />
                           </MenuNavSectionReveal>
-                          <MenuNavSectionReveal staggerIndex={1}>
+                          <MenuNavSectionReveal
+                            staggerIndex={1}
+                            className="br:border-b"
+                          >
                             <NavSection
-                              label="Case Studies"
+                              // label="Case Studies"
                               links={[
                                 {
                                   href: "/projects/cloud-iq",
@@ -339,7 +368,10 @@ export const Header = () => {
                               ]}
                             />
                           </MenuNavSectionReveal>
-                          <MenuNavSectionReveal staggerIndex={2}>
+                          <MenuNavSectionReveal
+                            staggerIndex={2}
+                            className="br:border-b"
+                          >
                             <NavSection
                               label="Writing"
                               links={[
@@ -368,7 +400,7 @@ export const Header = () => {
 
                         <MenuNavSectionReveal
                           staggerIndex={3}
-                          className="bl3px|solid|color-gray-700 pl:13x"
+                          className="bl3px|solid|color-gray-700 pl:13x w:33.33%"
                         >
                           {/* <div className="typestyle-display f:16 mb:3x">
                             Get in touch

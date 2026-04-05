@@ -69,7 +69,7 @@ export const Hero = () => {
             />
 
             <div className="flex align-items:end justify-content:end@xl">
-              <div className="pl:6x@md pl:6.5x@xl rel">
+              <div className="pl:6x@md pl:6.5x@xl rel mb:6px">
                 <span className="hidden block@md abs top:4px bottom:2px left:0 w:3px bg:color-gray-700"></span>
                 <TextModule
                   variant="block.hero"

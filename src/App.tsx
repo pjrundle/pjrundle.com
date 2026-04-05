@@ -4,6 +4,7 @@ import { Route, Switch, useLocation } from "wouter";
 
 import { Footer } from "./components/Footer.tsx";
 import { Header } from "./components/Header.tsx";
+import { AppUiProvider } from "./context/AppUiContext.tsx";
 import { designOptions, tokenStore } from "./design-system/design-system.ts";
 import { Page404 } from "./pages/404/404.tsx";
 import { Home } from "./pages/Home/Home.tsx";
@@ -13,7 +14,7 @@ import { ProjectPage } from "./pages/Projects/Project.tsx";
 import { WritingPage } from "./pages/Writing/Writing.tsx";
 
 // Design: Sometimes useful to disable images to focus on layout/spacing more easily
-export const DISABLE_IMAGES = true;
+export const DISABLE_IMAGES = false;
 
 // Prevent browser from restoring scroll position on refresh
 if ("scrollRestoration" in history) {
@@ -28,7 +29,7 @@ const ScrollToTopOnRouteChange = () => {
 
 export function App() {
   return (
-    <>
+    <AppUiProvider>
       <ScrollToTopOnRouteChange />
 
       <TokensProvider store={tokenStore}>
@@ -63,6 +64,6 @@ export function App() {
           </div>
         </SkinProvider>
       </TokensProvider>
-    </>
+    </AppUiProvider>
   );
 }
