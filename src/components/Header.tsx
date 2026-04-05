@@ -250,81 +250,45 @@ export const Header = () => {
               </div> */}
             </div>
 
-            <div className="flex gap-x:6x">
-              <div className="flex f:11 align-items:center gap-x:3x">
-                {/* <div className="flex r:20px b:border-b overflow:hidden">
-                  <Link
-                    href="/approach"
-                    className="typestyle-meta opacity:0.66 flex align-items:center px:4x py:2x bxborder-b"
-                  >
-                    <span>/ Approach</span>
-                  </Link>
-                  <Link
-                    href="/approach"
-                    className="typestyle-meta opacity:0.66 flex align-items:center px:4x py:2x"
-                  >
-                    <span>/ Process</span>
-                  </Link>
-                </div> */}
+            <nav className="color:color-gray-500 f:17 f:18@lg flex">
+              <ul
+                className={cn(
+                  "hidden!",
+                  "flex bl:border-b bt:border-b bg:color-gray-0 mr1.5x",
+                  `w${LOGO_WIDTH_MOBILE + 10}px w${LOGO_WIDTH_LG + 10}px@lg`,
+                )}
+              >
+                <SocialLink
+                  icon={HiPencil}
+                  href="/writing/design-systems-in-code"
+                  label="View Linkedin profile"
+                  newTab={false}
+                />
+                <SocialLink
+                  icon={RiLinkedinFill}
+                  href="https://www.linkedin.com/in/pete-rundle/"
+                  label="View Linkedin profile"
+                  className="bl:border-b"
+                />
+                <SocialLink
+                  icon={IoLogoGithub}
+                  className="bl:border-b"
+                  href="https://github.com/pjrundle"
+                  label="View GitHub profile"
+                />
+              </ul>
 
-                {/* <Badge>Approach</Badge>
-                <Badge>Process</Badge> */}
-
-                {/* <Link
-                  href="/writing"
-                  className="typestyle-copy opacity:0.66 f:13 flex align-items:center px:4x py:2x"
-                >
-                  Articles
-                </Link> */}
-
-                {/* <div className="grid grid-cols:2 color:color-gray-300 f:20 mr:-4x bl:border-a">
-                  <Icon icon={RiLinkedinFill} className="p:2x" />
-                  <Icon icon={IoLogoGithub} className="p:2x" />
-                  <Icon icon={HiPencil} className="p:2x" />
-                  <Icon icon={RiInstagramFill} className="p:2x" />
-                </div> */}
-              </div>
-
-              <nav className="color:color-gray-500 f:17 f:18@lg flex">
-                <ul
-                  className={cn(
-                    "hiddn!",
-                    "flex bl:border-b bt:border-b bg:color-gray-0 mr1.5x",
-                    `w${LOGO_WIDTH_MOBILE + 10}px w${LOGO_WIDTH_LG + 10}px@lg`,
-                  )}
-                >
-                  <SocialLink
-                    icon={HiPencil}
-                    href="/writing/design-systems-in-code"
-                    label="View Linkedin profile"
-                    newTab={false}
-                  />
-                  <SocialLink
-                    icon={RiLinkedinFill}
-                    href="https://www.linkedin.com/in/pete-rundle/"
-                    label="View Linkedin profile"
-                    className="bl:border-b"
-                  />
-                  <SocialLink
-                    icon={IoLogoGithub}
-                    className="bl:border-b"
-                    href="https://github.com/pjrundle"
-                    label="View GitHub profile"
-                  />
-                </ul>
-
-                <div className="flex hidden!" ref={triggerRef}>
-                  {/* <div className="flex align-items:center pr:6x">
+              <div className="flex hiddn!" ref={triggerRef}>
+                {/* <div className="flex align-items:center pr:6x">
                     <Button
                       label="Menu"
                       className="f:11"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     />
                   </div> */}
-                  <MenuIcon onClick={() => setIsMenuOpen(!isMenuOpen)} />
-                </div>
-              </nav>
-            </div>
+                <MenuIcon onClick={() => setIsMenuOpen(!isMenuOpen)} />
+              </div>
+            </nav>
           </div>
         </div>
 
@@ -367,7 +331,7 @@ export const Header = () => {
                     <div className="page-container-lg">
                       <div
                         ref={menuPanelRef}
-                        className="flex bx:border-a bb:border-a bb:6px|solid|color-gray-100! pt:10x pb:13x bg:color-gray-0 shadow:shadow-xl px:8x"
+                        className="flex bx:border-a bb:border-a bb:6px|solid|color-gray-100! pt:12x pb:17x bg:color-gray-0 shadow:shadow-xl px:8x"
                       >
                         <div className="grid grid-cols:3 gap-x10x w:66.66% pr:16x deug">
                           <MenuNavSectionReveal

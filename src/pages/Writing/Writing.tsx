@@ -30,6 +30,9 @@ export const WritingPage = () => {
                   heading={entry.title}
                   // size="project"
                 />
+                <div className="typestyle-copy f:11 mt:4x opacity:0.66">
+                  Published: 05/04/2026
+                </div>
               </div>
             </div>
             <WritingArticle slug={slug} />
