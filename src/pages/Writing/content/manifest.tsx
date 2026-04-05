@@ -6,7 +6,7 @@ export type TWritingManifestEntry = {
 export const writingManifest: TWritingManifestEntry[] = [
   {
     slug: "design-systems-in-code",
-    title: "Design systems in code",
+    title: "Is Figma the right place for design systems?",
   },
 ];
 

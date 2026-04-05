@@ -4,7 +4,7 @@ import { ExperienceWrapper } from "./ExperienceWrapper.tsx";
 
 export const Experience = () => {
   return (
-    <div className="bg:color-gray-25 py:20x">
+    <div className="bgcolor-gray-25 py20x">
       <ExperienceWrapper>
         <div className="grid grid-cols:1 grid-cols:2@lg gap:6x">
           {projectsManifest

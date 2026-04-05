@@ -82,7 +82,7 @@ const WritingArticleSection = ({ slug }: { slug: string }) => {
 
 export const WritingArticle = ({ slug }: { slug: string }) => {
   return (
-    <div className={cn("w:full f:12", "pb:10x pb:30x@lg", "mt:6x")}>
+    <div className={cn("w:full f:13", "pb:10x pb:30x@lg", "mt:6x")}>
       <ArticleErrorBoundary key={slug}>
         <WritingArticleSection slug={slug} />
       </ArticleErrorBoundary>

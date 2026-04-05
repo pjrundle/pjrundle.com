@@ -166,11 +166,11 @@ const NavSection = ({
   return (
     <div className="">
       <div
-        className={cn("typestyle-display f:16! mb:3x", !label && "opacity:0")}
-        // className={cn(
-        //   "typestyle-meta opacity:0.66 f:10 mb:3x",
-        //   !label && "opacity:0!",
-        // )}
+        // className={cn("typestyle-display f:16! mb:3x", !label && "opacity:0")}
+        className={cn(
+          "typestyle-meta opacity:0.66 f:10 mb:3x",
+          !label && "opacity:0!",
+        )}
       >
         {label || "Section"}
       </div>
@@ -339,7 +339,6 @@ export const Header = () => {
               </motion.div>
 
               <motion.div
-                ref={menuPanelRef}
                 key="menu-panel"
                 variants={menuPanelVariants}
                 initial="hidden"
@@ -355,7 +354,10 @@ export const Header = () => {
                 <div className="rel">
                   <div className="page-gutter">
                     <div className="page-container-lg">
-                      <div className="flex bx:border-a bb:border-a bb:6px|solid|color-gray-100! pt:8x pb:11x bg:color-gray-0 shadow:shadow-xl px:8x">
+                      <div
+                        ref={menuPanelRef}
+                        className="flex bx:border-a bb:border-a bb:6px|solid|color-gray-100! pt:8x pb:11x bg:color-gray-0 shadow:shadow-xl px:8x"
+                      >
                         <div className="grid grid-cols:3 gap-x10x w:66.66% pr:16x deug">
                           <MenuNavSectionReveal
                             staggerIndex={0}

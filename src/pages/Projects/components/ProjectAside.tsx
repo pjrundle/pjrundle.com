@@ -62,6 +62,7 @@ const MicrositeButton = ({
     <Button
       label={projectEntry.button.label}
       icon="arrowRight"
+      // variant="solid"
       className={className}
       renderAs={
         <PAccessibleLink href={projectEntry.button.href} newTab={true} />
@@ -85,7 +86,13 @@ const OverviewItem = ({
   if (!value) return null;
 
   return (
-    <p className={cn("typestyle-copy", !isFirst && "bt:border-b", "py:0.8em")}>
+    <p
+      className={cn(
+        "typestyle-copy",
+        !isFirst && "bt:border-b pt:0.8em",
+        "pb:0.8em",
+      )}
+    >
       <strong>{title}:</strong> {value}
     </p>
   );
@@ -132,7 +139,7 @@ export const ProjectAside = ({
       </header>
 
       <AsideSection label="Overview">
-        <div className="flex:1 flex flex-col f:12">
+        <div className="flex:1 flex flex-col">
           <OverviewItem
             title="Status"
             value={projectEntry.status}
@@ -147,13 +154,13 @@ export const ProjectAside = ({
         </div>
 
         {projectEntry.button && (
-          <div className="f:11 hidden flex@lg mt:5x">
+          <div className="f:11 hidden flex@lg my:3x pb:2x">
             <MicrositeButton projectEntry={projectEntry} className="w:full" />
           </div>
         )}
 
         {projectEntry.stats && projectEntry.stats.length > 0 && (
-          <div className="mt:4x grid grid-cols:3 gap:2x gap:4x@md pb:1.5x">
+          <div className="grid grid-cols:3 gap:2x gap:4x@md pb3x">
             {projectEntry.stats.map((stat) => (
               <div key={stat.label}>
                 <div className="typestyle-display f:22 f:24@md f:26@xl">
@@ -167,7 +174,7 @@ export const ProjectAside = ({
       </AsideSection>
 
       {hasTechStack && (
-        <AsideSection label="Stack" className="f:1.5xs f:xs@md f1.5sm@lg">
+        <AsideSection label="Stack">
           <p className="typestyle-copy text-wrap:pretty">
             {projectEntry.techStack?.join(" · ")}
           </p>

@@ -85,7 +85,7 @@ export const ProjectArticle = ({ slug }: { slug: string }) => {
   return (
     <div
       className={cn(
-        "w:full w:66.66%@lg f:12",
+        "w:full w:66.66%@lg f:13",
         "bx:border-b@lg bb:border-b@lg pb:10x pb:30x@lg",
       )}
     >

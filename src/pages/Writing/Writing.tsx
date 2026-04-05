@@ -21,11 +21,19 @@ export const WritingPage = () => {
   return (
     <article>
       <div className="page-gutter">
-        <div className="page-container-lg pt:14x pb:8x">
-          <div className="mb:10x max-w:620px mx:auto">
-            <HeroText heading={entry.title} size="project" />
+        <div className="page-container-lg px:7.5x pattern-diag bx:border-b">
+          <div className="bg:color-gray-0 bx:border-b pb:8x">
+            <div className="bb:border-b bg:color-gray-0 pt:14x pb:14x mb:14x">
+              <div className="max-w:620px mx:auto">
+                <HeroText
+                  overline="Article"
+                  heading={entry.title}
+                  size="project"
+                />
+              </div>
+            </div>
+            <WritingArticle slug={slug} />
           </div>
-          <WritingArticle slug={slug} />
         </div>
       </div>
     </article>

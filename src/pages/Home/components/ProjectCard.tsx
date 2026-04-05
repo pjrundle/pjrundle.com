@@ -149,7 +149,7 @@ export const ProjectCard = ({
                 {...({
                   fetchpriority: imageLoading === "eager" ? "high" : "low",
                 } as React.ImgHTMLAttributes<HTMLImageElement>)}
-                className="abs inset:0 object:cover object-position:center h:100% w:100%"
+                className="abs inset:0 object:cover object-position:center h:100% w:100% filter:grayscale(0) {filter:grayscale(0)}:of(.group:hover) transition:filter|0.2s|ease-in-out"
               />
             </div>
           )}
