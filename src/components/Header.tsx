@@ -3,6 +3,7 @@ import { useOnClickOutside } from "@theme-os/react-primitives";
 import { cn } from "@theme-os/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRef } from "react";
+import { HiPencil } from "react-icons/hi";
 import { IoLogoGithub } from "react-icons/io";
 import { RiLinkedinFill } from "react-icons/ri";
 import { Link } from "wouter";
@@ -75,18 +76,20 @@ const SocialLink = ({
   href,
   className,
   label,
+  newTab = true,
 }: {
   icon: React.ElementType;
   href: string;
   className?: string;
   label?: string;
+  newTab?: boolean;
 }) => {
   return (
     <li className="d:contents">
       <a
         href={href}
-        rel="noopener noreferrer"
-        target="_blank"
+        rel={newTab ? "noopener noreferrer" : undefined}
+        target={newTab ? "_blank" : undefined}
         aria-label={label}
         className={cn(
           "w:50% p:2x p:3x@md",
@@ -166,11 +169,11 @@ const NavSection = ({
   return (
     <div className="">
       <div
-        // className={cn("typestyle-display f:16! mb:3x", !label && "opacity:0")}
-        className={cn(
-          "typestyle-meta opacity:0.66 f:10 mb:3x",
-          !label && "opacity:0!",
-        )}
+        className={cn("typestyle-display f:16! mb:3x", !label && "opacity:0")}
+        // className={cn(
+        //   "typestyle-meta opacity:0.66 f:10 mb:3x",
+        //   !label && "opacity:0!",
+        // )}
       >
         {label || "Section"}
       </div>
@@ -238,7 +241,14 @@ export const Header = () => {
       <header className="sticky top:0 z:100">
         <div className="page-gutter rel z:20">
           <div className="page-container-lg bg:color-gray-0 z:100 bb:border-b bx:border-b flex justify-content:space-between">
-            <Logo />
+            <div className="flex align-items:center">
+              <Logo />
+              {/* <div className="ml:6x">
+                <div className="typestyle-display opacity:0.66 f:14">
+                  Pete Rundle
+                </div>
+              </div> */}
+            </div>
 
             <div className="flex gap-x:6x">
               <div className="flex f:11 align-items:center gap-x:3x">
@@ -283,16 +293,17 @@ export const Header = () => {
                     `w${LOGO_WIDTH_MOBILE + 10}px w${LOGO_WIDTH_LG + 10}px@lg`,
                   )}
                 >
-                  {/* <SocialLink
+                  <SocialLink
                     icon={HiPencil}
-                    href="#0"
+                    href="/writing/design-systems-in-code"
                     label="View Linkedin profile"
-                  /> */}
+                    newTab={false}
+                  />
                   <SocialLink
                     icon={RiLinkedinFill}
                     href="https://www.linkedin.com/in/pete-rundle/"
                     label="View Linkedin profile"
-                    // className="bl:border-b"
+                    className="bl:border-b"
                   />
                   <SocialLink
                     icon={IoLogoGithub}
@@ -302,7 +313,7 @@ export const Header = () => {
                   />
                 </ul>
 
-                <div className="flex" ref={triggerRef}>
+                <div className="flex hidden!" ref={triggerRef}>
                   {/* <div className="flex align-items:center pr:6x">
                     <Button
                       label="Menu"
@@ -356,7 +367,7 @@ export const Header = () => {
                     <div className="page-container-lg">
                       <div
                         ref={menuPanelRef}
-                        className="flex bx:border-a bb:border-a bb:6px|solid|color-gray-100! pt:8x pb:11x bg:color-gray-0 shadow:shadow-xl px:8x"
+                        className="flex bx:border-a bb:border-a bb:6px|solid|color-gray-100! pt:10x pb:13x bg:color-gray-0 shadow:shadow-xl px:8x"
                       >
                         <div className="grid grid-cols:3 gap-x10x w:66.66% pr:16x deug">
                           <MenuNavSectionReveal
@@ -364,7 +375,8 @@ export const Header = () => {
                             // className="br:border-b"
                           >
                             <NavSection
-                              label="Work"
+                              // label="Work"
+                              label="Products/Systems"
                               links={[
                                 {
                                   href: "/projects/theme-os",
@@ -379,7 +391,7 @@ export const Header = () => {
                             // className="br:border-b"
                           >
                             <NavSection
-                              // label="Case Studies"
+                              label="Case Studies"
                               links={[
                                 {
                                   href: "/projects/cloud-iq",
