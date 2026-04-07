@@ -160,7 +160,12 @@ export const ProjectAside = ({
         )}
 
         {projectEntry.stats && projectEntry.stats.length > 0 && (
-          <div className="grid grid-cols:3 gap:2x gap:4x@md pb3x">
+          <div
+            className={cn(
+              "grid grid-cols:3 gap:2x gap:4x@md",
+              !projectEntry.button && "pt:2x",
+            )}
+          >
             {projectEntry.stats.map((stat) => (
               <div key={stat.label}>
                 <div className="typestyle-display f:22 f:24@md f:26@xl">
@@ -175,7 +180,7 @@ export const ProjectAside = ({
 
       {hasTechStack && (
         <AsideSection label="Stack">
-          <p className="typestyle-copy text-wrap:pretty">
+          <p className="typestyle-copy text-wrap:pretty pt:3px">
             {projectEntry.techStack?.join(" · ")}
           </p>
         </AsideSection>

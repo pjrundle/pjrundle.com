@@ -91,7 +91,7 @@ export const ProjectCard = ({
                     className={cn(
                       `w:${100 * logoAdjust}px`,
                       `w:${135 * logoAdjust}px@lg`,
-                      `w:${160 * logoAdjust}px@xl`,
+                      `w:${150 * logoAdjust}px@xl`,
                       "color:color-gray-950",
                       size === "product" && "rel@lg top-2x top:-5x",
                       size === "use-case" && "rel@lg top:-2x",

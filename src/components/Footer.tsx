@@ -3,8 +3,6 @@ import { PAccessibleLink } from "@theme-os/react-primitives";
 import { cn } from "@theme-os/utils";
 import { Link } from "wouter";
 
-import { PJRGlyph } from "../assets/PJRGlyph.tsx";
-
 const FooterLink = ({
   href,
   label,
@@ -39,7 +37,7 @@ const FooterLink = ({
 
 export const Footer = () => {
   return (
-    <footer className="rel mt:24x mt:40x@xl mt:45x@2xl overflow:hidden">
+    <footer className="rel mt:24x mt:40x@xl mt:45x@2xl overflow:hidden hidden!">
       <div className="page-gutter">
         <div className="rel page-container-lg px:5x px:10x@md pt:6.5x pb:7.5x pt:8x@sm pb:9.5x@sm pt:12x@md pb:14x@md b:border-b bb:none flex justify-content:start bg:color-gray-0">
           <TextModule
@@ -54,7 +52,7 @@ export const Footer = () => {
         <div className="page-container-lg bg:color-gray-50 z:100 b:border-b bb:none">
           <div className="px:5x px:10x@md py:6x py:8x@md flex flex-col flex-row@md gap:4x gap:10x@md align-items:center@md justify-content:space-between">
             <div className="w:full flex align-items:center gap:5x gap:8x@md justify-content:space-between@<md">
-              <PJRGlyph className="ml:1x ml:0@md hidden@<md w:21px w:25px@md color:color-gray-950" />
+              {/* <PJRGlyph className="ml:1x ml:0@md hidden@<md w:21px w:25px@md color:color-gray-950" /> */}
               <Button
                 label="Download CV"
                 variant="outline"

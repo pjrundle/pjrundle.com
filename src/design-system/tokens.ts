@@ -253,7 +253,7 @@ export const tokenSet = {
           "0": "oklch(14% 0 0)",
           "25": "oklch(17% 0 0)",
           "50": "oklch(18.5% 0 0)",
-          "100": "oklch(21.5% 0 0)",
+          "100": "oklch(21% 0 0)",
           "150": "oklch(22.5% 0 0)",
           "200": "oklch(30% 0 0)",
           "300": "oklch(40% 0 0)",
@@ -1058,7 +1058,7 @@ export const tokenSet = {
                 spaceAfter: "pb:3.5x",
               },
               heading: {
-                fontSize: "f:display-xs f:display-sm@sm f:display-md@xl",
+                fontSize: "f:display-xs f:display-sm@sm f:displaymd@xl",
                 spaceAfter: "pb:4x",
               },
               copy: {
