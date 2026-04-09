@@ -1,6 +1,7 @@
 import { useParams } from "wouter";
 
 import { HeroText } from "../../components/HeroText.tsx";
+import { PageHatched } from "../../components/PageHatched.tsx";
 import { Page404 } from "../404/404.tsx";
 import { WritingArticle } from "./components/WritingArticle.tsx";
 import { writingManifestBySlug } from "./content/manifest.tsx";
@@ -19,26 +20,20 @@ export const WritingPage = () => {
   if (!slug || !entry) return <Page404 />;
 
   return (
-    <article>
-      <div className="page-gutter">
-        <div className="page-container-lg px:7.5x pb:7.5x bb:border-b pattern-diag bx:border-b">
-          <div className="bg:color-gray-25 bx:border-b bb:border-b pb:8x">
-            <div className="bb:border-b bg:color-gray-0 pt:14x pb:16x mb:14x">
-              <div className="max-w:620px mx:auto">
-                <HeroText
-                  overline="Article"
-                  heading={entry.title}
-                  // size="project"
-                />
-                <div className="typestyle-copy f:12 mt:4x opacity:0.66">
-                  Published: 05/04/2026
-                </div>
-              </div>
-            </div>
-            <WritingArticle slug={slug} />
+    <PageHatched>
+      <div className="bb:border-b bg:color-gray-0 pt:14x pb:16x mb:14x">
+        <div className="max-w:620px mx:auto">
+          <HeroText
+            overline="Article"
+            heading={entry.title}
+            // size="project"
+          />
+          <div className="typestyle-copy f:12 mt:4x opacity:0.66">
+            Published: 05/04/2026
           </div>
         </div>
       </div>
-    </article>
+      <WritingArticle slug={slug} />
+    </PageHatched>
   );
 };
