@@ -11,6 +11,7 @@ import { Home } from "./pages/Home/Home.tsx";
 import { PageTransitionOverlay } from "./pages/Labs/components/PageTransitionOverlay.tsx";
 import { Labs } from "./pages/Labs/Labs.tsx";
 import { ProjectPage } from "./pages/Projects/Project.tsx";
+import { MiscPage } from "./pages/Misc/Misc.tsx";
 import { WritingPage } from "./pages/Writing/Writing.tsx";
 
 // Design: Sometimes useful to disable images to focus on layout/spacing more easily
@@ -52,6 +53,9 @@ export function App() {
                 </Route>
                 <Route path="/writing/:slug">
                   <WritingPage />
+                </Route>
+                <Route path="/misc">
+                  <MiscPage />
                 </Route>
                 <Route>
                   <Page404 />
