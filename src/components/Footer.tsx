@@ -37,7 +37,7 @@ const FooterLink = ({
 
 export const Footer = () => {
   return (
-    <footer className="rel mt:24x mt:40x@xl mt:45x@2xl overflow:hidden hidden!">
+    <footer className="rel mt:24x mt:40x@xl mt:45x@2xl overflow:hidden">
       <div className="page-gutter">
         <div className="rel page-container-lg px:5x px:10x@md pt:6.5x pb:7.5x pt:8x@sm pb:9.5x@sm pt:12x@md pb:14x@md b:border-b bb:none flex justify-content:start bg:color-gray-0">
           <TextModule

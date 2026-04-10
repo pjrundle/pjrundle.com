@@ -170,7 +170,7 @@ const NavSection = ({
     <div className="">
       <div
         // className={cn(
-        //   "typestyle-heading f:14 mb:3x bb:border-b pb:2x",
+        //   "typestyle-heading f:14 mb:3x bbborder-b pb2x",
         //   !label && "opacity:0",
         // )}
         className={cn(
@@ -407,7 +407,7 @@ export const Header = () => {
                           staggerIndex={3}
                           className="bl3px|solid|color-gray-700 pl:13x w:50%"
                         >
-                          <div className="typestyle-display f:12 color:color-gray-500 mb:0.5x">
+                          {/* <div className="typestyle-display f:12 color:color-gray-500 mb:0.5x">
                             Pete Rundle
                           </div>
                           <div className="typestyle-display f:20">
@@ -416,9 +416,9 @@ export const Header = () => {
                           <div className="typestyle-copy f:10 color:color-gray-400 mt:1x">
                             React · TypeScript · UI Architecture · Design
                             Systems
-                          </div>
+                          </div> */}
                           <NavSection
-                            // label="Contact"
+                            label="Contact"
                             links={[
                               {
                                 href: "mailto:hello@pjrundle.com",

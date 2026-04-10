@@ -32,7 +32,7 @@ export const HeroText = ({
           "text-wrap:balance leading1.35 leading:1.2@sm",
           size === "home"
             ? "f:28 f:32@sm f:34@md f:37@xl"
-            : "f:26 f:29@lg f:31@xl",
+            : "f:26 f:29@lg f:33@xl",
         )}
       >
         {heading}

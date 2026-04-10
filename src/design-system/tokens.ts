@@ -1058,7 +1058,7 @@ export const tokenSet = {
                 spaceAfter: "pb:3.5x",
               },
               heading: {
-                fontSize: "f:display-xs f:display-sm@sm f:displaymd@xl",
+                fontSize: "f:display-xs f:display-sm@sm f:display-md@xl",
                 spaceAfter: "pb:4x",
               },
               copy: {
