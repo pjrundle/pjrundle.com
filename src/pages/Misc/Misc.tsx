@@ -109,6 +109,14 @@ const OutputText = ({
   };
   className?: string;
 }) => {
+  const isEmptyFormData = Object.values(formData).every(
+    (value) => value === "",
+  );
+
+  if (isEmptyFormData) {
+    return null;
+  }
+
   return (
     <div
       className={cn(
